@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fizjoterapia Marzena Tarczyńska — Ogrodzieniec</title>
-<meta name="description" content="Fizjoterapia i masaż z dojazdem do domu. Terapia bólów kręgosłupa, korekcja wad postawy i skolioz, masaż leczniczy. Dorośli i dzieci. Ogrodzieniec i okolice do 30 km.">
+<title>FizjoMarzena — fizjoterapia z dojazdem, Ogrodzieniec</title>
+<meta name="description" content="FizjoMarzena — rehabilitacja dzieci i dorosłych. Terapia skolioz metodą FITS, terapia bólów kręgosłupa, masaż leczniczy. Wizyty domowe i w gabinecie. Ogrodzieniec i okolice do 30 km.">
 <meta name="robots" content="noindex, nofollow">
-<meta property="og:title" content="Fizjoterapia Marzena Tarczyńska — Ogrodzieniec">
-<meta property="og:description" content="Wizyty domowe: terapia bólów kręgosłupa, korekcja wad postawy i skolioz, masaż leczniczy. Dorośli i dzieci.">
+<meta property="og:title" content="FizjoMarzena — rehabilitacja dzieci i dorosłych">
+<meta property="og:description" content="Fizjoterapia i masaż u Ciebie w domu — Ogrodzieniec i okolice do 30 km. Terapia skolioz metodą FITS. Wizyty także w gabinecie.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -177,6 +177,27 @@ h3.h3 { font-size: clamp(20px, 2.4vw, 24px); line-height: 1.24; }
 .ph--map { aspect-ratio: 4 / 3; border-color: var(--line-dark); background: repeating-linear-gradient(135deg, #17405F 0 12px, #1B4B6D 12px 24px); }
 .ph--map span { background: rgba(10,28,44,.85); color: var(--blue-100); }
 
+/* ---------- pasek nad nagłówkiem ---------- */
+
+.topbar { background: var(--navy-800); color: #BDD3E4; font-size: 13.5px; }
+.topbar__in {
+  max-width: var(--wrap); margin: 0 auto; padding: 9px 20px;
+  display: flex; flex-wrap: wrap; gap: 4px 20px; justify-content: space-between;
+}
+@media (min-width: 768px) { .topbar__in { padding: 9px 32px; } }
+.topbar b { color: #fff; font-weight: 600; }
+.topbar a { color: var(--blue-300); text-decoration: none; }
+.topbar a:hover { color: #fff; }
+
+/* ---------- galeria ---------- */
+
+.gallery {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 30px;
+}
+@media (min-width: 700px) { .gallery { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+.gallery .ph { aspect-ratio: 1 / 1; }
+.gallery .ph span { font-size: 12.5px; max-width: 22ch; }
+
 /* ---------- pasek postępu + nagłówek ---------- */
 
 .progress {
@@ -294,6 +315,9 @@ body.is-locked { overflow: hidden; }
 .hero__cta { display: grid; gap: 12px; margin: 28px 0 22px; }
 @media (min-width: 560px) { .hero__cta { display: flex; flex-wrap: wrap; } }
 .hero__chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.hero__towns { margin-top: 18px; font-size: 15px; line-height: 1.55; color: #A7C1D6; max-width: 52ch; }
+.hero__towns a { color: var(--blue-300); text-decoration: underline; text-underline-offset: 3px; }
+.hero__towns a:hover { color: #fff; }
 .chip {
   display: inline-flex; align-items: center; gap: 8px;
   font-size: 14px; font-weight: 500; color: #D3E4F0;
@@ -644,33 +668,39 @@ body.is-locked { overflow: hidden; }
 <div class="progress" id="progress"></div>
 
 <details class="memo" id="memo" open>
-  <summary><span>i</span>Makieta poglądowa — wersja 2 (granat i błękit z wizytówki)</summary>
+  <summary><span>i</span>Makieta poglądowa — wersja 3 (uwagi z 8 września wprowadzone)</summary>
   <div class="memo__in">
     To nie jest gotowa strona. Teksty, kolejność sekcji, kolory i zdjęcia można jeszcze zmienić.
     <div class="memo__row">
-      <span><i class="sw sw--tbd"></i> <b>podświetlone</b> = dane do potwierdzenia</span>
+      <span><i class="sw sw--tbd"></i> <b>podświetlone</b> = dane do potwierdzenia (ceny, adres gabinetu, godziny w tygodniu)</span>
       <span><i class="sw sw--ph"></i> <b>zakreskowane</b> = miejsce na zdjęcie</span>
-      <span><i class="sw" style="background:#2E86C7"></i> numer telefonu wzięty z wizytówki (691 807 853) — na obecnej stronie jest inny (732 242 000). Który jest aktualny?</span>
     </div>
   </div>
 </details>
 
+<div class="topbar">
+  <div class="topbar__in">
+    <span>Wizyty domowe: <b>sobota w godzinach 8:00–14:00</b></span>
+    <span><a href="#top">fizjoterapia-ogrodzieniec.pl</a></span>
+  </div>
+</div>
+
 <header class="head" id="head">
   <div class="wrap head__in">
     <a class="brand" href="#top">
-      <span class="brand__mark">MT</span>
+      <span class="brand__mark">FM</span>
       <span class="brand__txt">
         <b>Marzena Tarczyńska</b>
-        <em>Fizjoterapia · wizyty domowe</em>
+        <em>Fizjoterapeuta</em>
       </span>
     </a>
     <nav class="nav">
-      <a href="#dolegliwosci">Pomagam przy</a>
-      <a href="#uslugi">Zabiegi</a>
-      <a href="#dzieci">Dzieci</a>
+      <a href="#top">Start</a>
+      <a href="#terapie">Terapie i masaże</a>
       <a href="#cennik">Cennik</a>
-      <a href="#dojazd">Dojazd</a>
+      <a href="#dojazd">Dojeżdżam do Ciebie</a>
       <a href="#omnie">O mnie</a>
+      <a href="#galeria">Galeria</a>
     </nav>
     <div class="head__cta">
       <a class="btn btn--primary head__phone" href="tel:+48691807853">
@@ -699,20 +729,17 @@ body.is-locked { overflow: hidden; }
   </div>
   <nav>
     <a href="#top">Start</a>
-    <a href="#dolegliwosci">Z czym pomagam</a>
-    <a href="#uslugi">Zabiegi</a>
-    <a href="#dzieci">Dzieci i młodzież</a>
-    <a href="#wizyta">Jak wygląda wizyta</a>
+    <a href="#terapie">Terapie i masaże</a>
     <a href="#cennik">Cennik</a>
-    <a href="#dojazd">Obszar dojazdu</a>
+    <a href="#dojazd">Dojeżdżam do Ciebie</a>
     <a href="#omnie">O mnie</a>
-    <a href="#firmy">Dla firm i hoteli</a>
+    <a href="#galeria">Galeria</a>
     <a href="#kontakt">Kontakt</a>
   </nav>
   <div class="drawer__foot">
     Wizyty domowe<br>
-    pon., śr., pt. 16:00–20:00<br>
-    sob. 9:00–13:00
+    sobota 8:00–14:00<br>
+    Wizyty w gabinecie — <span class="tbd">godziny do potwierdzenia</span>
   </div>
 </div>
 
@@ -721,9 +748,9 @@ body.is-locked { overflow: hidden; }
   <div class="hero__glow" aria-hidden="true"></div>
   <div class="wrap hero__in">
     <div>
-      <p class="eyebrow">Fizjoterapia · wizyty domowe</p>
-      <h1>Fizjoterapia i masaż <mark>u Ciebie w domu</mark> — Ogrodzieniec i okolice</h1>
-      <p class="hero__lead">Terapia bólów kręgosłupa, korekcja wad postawy i skolioz, masaż leczniczy. Pracuję z dorosłymi i z dziećmi. Przyjeżdżam z własnym stołem i sprzętem — Ty przygotowujesz tylko dwa metry wolnej podłogi.</p>
+      <p class="eyebrow">Marzena Tarczyńska 🙏 Rehabilitacja z dojazdem</p>
+      <h1>Fizjoterapia i masaż <mark>u Ciebie w domu</mark> — Ogrodzieniec i okolice do 30 km</h1>
+      <p class="hero__lead">Dyplomowany terapeuta metody FITS. Wierzę, że to, co robię, pomoże innym. Przyjeżdżam z własnym stołem, wiedzą i doświadczeniem — Ty przygotowujesz tylko dwa metry wolnej podłogi. Wizyty także w gabinecie.</p>
       <div class="hero__cta">
         <a class="btn btn--primary" href="tel:+48691807853">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -735,10 +762,11 @@ body.is-locked { overflow: hidden; }
         </a>
       </div>
       <div class="hero__chips">
-        <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Dorośli i dzieci</span>
-        <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Dojazd do 30 km</span>
-        <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Własny stół i sprzęt</span>
+        <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Terapia skolioz metodą FITS</span>
+        <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Dzieci i dorośli</span>
+        <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Także wizyty w gabinecie</span>
       </div>
+      <p class="hero__towns">Zawiercie · Łazy · Niegowonice · Chechło · Kwaśniów · Pilica i 150 innych miejscowości — <a href="#dojazd">sprawdź, czy dojeżdżam do Ciebie</a></p>
     </div>
     <div class="hero__media">
       <div class="ph ph--portrait"><span>Zdjęcie: Marzena Tarczyńska — portret po pas, światło dzienne z okna, tło naturalne</span></div>
@@ -756,10 +784,10 @@ body.is-locked { overflow: hidden; }
 <section class="facts">
   <div class="wrap">
     <div class="facts__grid">
-      <div class="fact"><b>30 km</b><span>zasięg dojazdu od Ogrodzieńca</span></div>
-      <div class="fact"><b>Dzieci i dorośli</b><span>także korekcja wad postawy</span></div>
-      <div class="fact"><b class="tbd">od 2015</b><span>doświadczenia w zawodzie</span></div>
-      <div class="fact"><b>0 zł</b><span>dojazd w cenie zabiegu do <span class="tbd">— km</span></span></div>
+      <div class="fact"><b>30 km</b><span>zasięg dojazdu od Ogrodzieńca — lub wizyta w gabinecie</span></div>
+      <div class="fact"><b>12</b><span>rodzajów terapii i masażu</span></div>
+      <div class="fact"><b>Własny sprzęt</b><span>stół, piny, masażer, narzędzia i urządzenia do terapii oraz profesjonalnie wyposażony gabinet</span></div>
+      <div class="fact"><b>od 2017 r.</b><span>doświadczenia w fizjoterapii i rehabilitacji — szpitale, ośrodki, gabinety prywatne</span></div>
     </div>
   </div>
 </section>
@@ -803,19 +831,19 @@ body.is-locked { overflow: hidden; }
       </div>
       <div class="pain">
         <span class="pain__ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 1 1-8-8M15 3l2 2-2 2"/></svg></span>
-        <div><b>Przemęczenie i kłopoty z zasypianiem</b><p>Kiedy nic konkretnego nie jest zepsute, a ciało nie odpoczywa.</p></div>
+        <div><b>Rehabilitacja osoby leżącej lub na wózku</b><p>W domu, u pacjenta, który nie dojedzie do gabinetu. Mam w tym praktykę ze szpitali i ośrodków.</p></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ ZABIEGI (ZAKŁADKI) ============ -->
-<section class="sec sec--tint" id="uslugi">
+<section class="sec sec--tint" id="terapie">
   <div class="wrap">
     <div class="head-block rv">
-      <p class="eyebrow">Zabiegi</p>
+      <p class="eyebrow">Terapie i masaże</p>
       <h2 class="h2">Cztery rodzaje wizyt</h2>
-      <p class="lead">Wszystkie realizuję w domu pacjenta. Kliknij zakładkę, żeby zobaczyć szczegóły.</p>
+      <p class="lead">Realizuję je w domu pacjenta albo w gabinecie. Kliknij zakładkę, żeby zobaczyć szczegóły.</p>
     </div>
 
     <div class="tabs rv">
@@ -852,15 +880,16 @@ body.is-locked { overflow: hidden; }
         <div class="panel__grid">
           <div class="ph ph--card"><span>Zdjęcie: ćwiczenia korekcyjne z dzieckiem (za zgodą rodzica)</span></div>
           <div>
-            <h3 class="h3">Korekcja wad postawy i skolioz — dzieci i młodzież</h3>
+            <h3 class="h3">Korekcja wad postawy i skolioz — metoda FITS</h3>
             <div class="tags">
+              <span class="tag">Metoda FITS</span>
+              <span class="tag">Skoliozy</span>
               <span class="tag">Ocena postawy</span>
               <span class="tag">Ćwiczenia korekcyjne</span>
-              <span class="tag">Skoliozy</span>
               <span class="tag">Plecy okrągłe i wklęsłe</span>
               <span class="tag">Instruktaż dla rodzica</span>
             </div>
-            <p class="small" style="font-size:16.5px;color:var(--ink)">Pracuję w domu, w warunkach, które dziecko zna — bez stresu poczekalni. Rodzic jest przy wizycie i uczy się ćwiczeń razem z dzieckiem, żeby dało się je powtarzać między spotkaniami.</p>
+            <p class="small" style="font-size:16.5px;color:var(--ink)">Pracuję metodą <b>FITS</b> — Funkcjonalną Indywidualną Terapią Skolioz, w której jestem dyplomowanym terapeutą. Zabieg prowadzę w domu, w warunkach, które dziecko zna, bez stresu poczekalni. Rodzic jest przy wizycie i uczy się ćwiczeń razem z dzieckiem, żeby dało się je powtarzać między spotkaniami.</p>
             <div class="meta-row">
               <span>Czas wizyty: 45 min</span>
               <span>Cena od <strong class="tbd">— zł</strong></span>
@@ -985,11 +1014,11 @@ body.is-locked { overflow: hidden; }
       <div class="rv">
         <p class="eyebrow">Obszar dojazdu</p>
         <h2 class="h2">Dojeżdżam w promieniu 30 km od Ogrodzieńca</h2>
-        <p class="lead">Jeśli Twojej miejscowości nie ma na liście, ale jesteś w zasięgu 30 km — zadzwoń, prawdopodobnie przyjadę.</p>
+        <p class="lead">W promieniu 30 km jest około 150 miejscowości. Poniżej te, do których jeżdżę najczęściej — jeśli Twojej nie ma na liście, zadzwoń, prawdopodobnie przyjadę.</p>
         <div class="pills">
-          <a href="#dojazd">Ogrodzieniec</a><a href="#dojazd">Zawiercie</a><a href="#dojazd">Łazy</a><a href="#dojazd">Dąbrowa Górnicza</a><a href="#dojazd">Siewierz</a><a href="#dojazd">Poręba</a><a href="#dojazd">Myszków</a><a href="#dojazd">Włodowice</a><a href="#dojazd">Kroczyce</a><a href="#dojazd">Pilica</a><a href="#dojazd">Wolbrom</a><a href="#dojazd">Klucze</a><a href="#dojazd">Olkusz</a><a href="#dojazd">Bolesław</a><a href="#dojazd">Bukowno</a><a href="#dojazd">Sławków</a>
+          <a href="#dojazd">Ogrodzieniec</a><a href="#dojazd">Zawiercie</a><a href="#dojazd">Łazy</a><a href="#dojazd">Niegowonice</a><a href="#dojazd">Chechło</a><a href="#dojazd">Kwaśniów</a><a href="#dojazd">Pilica</a><a href="#dojazd">Klucze</a><a href="#dojazd">Olkusz</a><a href="#dojazd">Bolesław</a><a href="#dojazd">Bukowno</a><a href="#dojazd">Sławków</a><a href="#dojazd">Siewierz</a><a href="#dojazd">Poręba</a><a href="#dojazd">Dąbrowa Górnicza</a><a href="#dojazd">Myszków</a><a href="#dojazd">Włodowice</a><a href="#dojazd">Kroczyce</a><a href="#dojazd">Wolbrom</a>
         </div>
-        <p class="small" style="color:#A9C3D6">Dojazd do <span class="tbd">— km</span> w cenie zabiegu. Powyżej — dopłata <span class="tbd">— zł</span>.</p>
+        <p class="small" style="color:#A9C3D6">Dojazd do <span class="tbd">— km</span> w cenie zabiegu. Powyżej — dopłata <span class="tbd">— zł</span>. Możesz też przyjechać do gabinetu — <span class="tbd">adres do potwierdzenia</span>.</p>
       </div>
       <div class="rv">
         <div class="ph ph--map"><span>Mapa: okrąg 30 km wokół Ogrodzieńca. Statyczny obrazek — kliknięcie otwiera Mapy Google</span></div>
@@ -1008,22 +1037,43 @@ body.is-locked { overflow: hidden; }
       </div>
       <div class="rv">
         <p class="eyebrow">Kto do Ciebie przyjedzie</p>
-        <h2 class="h2">Marzena Tarczyńska</h2>
-        <p style="font-size:17.5px">Doświadczenie zdobywałam w hotelach na Warmii i we własnym gabinecie. Kilka lat temu przeprowadziłam się na Jurę Krakowsko-Częstochowską i dziś pracuję tak, jak moim pacjentom jest najwygodniej — <b>przyjeżdżam do domu</b>. Bez dojazdu do gabinetu, bez poczekalni, bez wracania samochodem tuż po zabiegu.</p>
-        <p style="font-size:17.5px">Pracuję z dorosłymi i z dziećmi. Zawsze zaczynam od rozmowy o tym, co i od kiedy boli, sprawdzam ruchomość i dopiero potem dobieram technikę. Po wizycie dostajesz ćwiczenia do domu — bo sam zabieg bez pracy między wizytami wystarcza rzadko.</p>
+        <h2 class="h2">Marzena Tarczyńska — fizjoterapeuta</h2>
+        <p style="font-size:17.5px">W fizjoterapii i rehabilitacji pracuję <b>od 2017 roku</b>. Prowadziłam terapię pacjentów małych i dużych — chodzących, na wózkach inwalidzkich oraz leżących — w szpitalach rehabilitacyjnych, w ośrodkach i zakładach rehabilitacyjno-opiekuńczo-leczniczych oraz w prywatnych gabinetach fizjoterapii i masażu.</p>
+        <p style="font-size:17.5px">Obecnie rehabilituję dzieci i młodzież z niepełnosprawnością intelektualną i fizyczną w <b>Polskim Stowarzyszeniu na rzecz Osób z Niepełnosprawnością Intelektualną (PSONI)</b>. Jestem dyplomowanym terapeutą <b>metody FITS</b> — Funkcjonalnej Indywidualnej Terapii Skolioz.</p>
+        <p style="font-size:17.5px">Do pacjentów <b>przyjeżdżam do domu</b> — bez dojazdu do gabinetu, bez poczekalni, bez wracania samochodem tuż po zabiegu. Przyjmuję też w gabinecie. Zawsze zaczynam od rozmowy o tym, co i od kiedy boli, oceniam ruchomość i dopiero potem dobieram technikę. Po wizycie dostajesz ćwiczenia do domu — bo sam zabieg bez pracy między wizytami wystarcza rzadko.</p>
         <div class="creds">
-          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8.5 14 7 22l5-3 5 3-1.5-8"/></svg><span><span class="tbd">Kwalifikacje i uprawnienia — dokładne brzmienie do ustalenia z Panią Marzeną</span></span></div>
-          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Praca z dorosłymi i z dziećmi</span></div>
-          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Doświadczenie z hoteli na Warmii i własnego gabinetu</span></div>
-          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Pełne wyposażenie wożone na wizyty</span></div>
+          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8.5 14 7 22l5-3 5 3-1.5-8"/></svg><span>Dyplomowany terapeuta metody <b>FITS</b> (Funkcjonalna Indywidualna Terapia Skolioz)</span></div>
+          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Fizjoterapeuta — <span class="tbd">numer PWZFz do wpisania</span></span></div>
+          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Rehabilitacja dzieci i dorosłych: pacjenci chodzący, na wózkach i leżący</span></div>
+          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Pełne wyposażenie wożone na wizyty oraz własny gabinet</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ============ GALERIA ============ -->
+<section class="sec sec--tint" id="galeria">
+  <div class="wrap">
+    <div class="head-block rv">
+      <p class="eyebrow">Galeria</p>
+      <h2 class="h2">Z mojej pracy</h2>
+      <p class="lead">Prawdziwe zdjęcia z wizyt i z gabinetu — bez zdjęć z internetu. Kliknięcie powiększa.</p>
+    </div>
+    <div class="gallery rv">
+      <div class="ph"><span>Terapia FITS — ćwiczenia korekcyjne z dzieckiem</span></div>
+      <div class="ph"><span>Rozłożony stół w pokoju pacjenta</span></div>
+      <div class="ph"><span>Gabinet — stanowisko do terapii</span></div>
+      <div class="ph"><span>Sprzęt: piny, masażer, narzędzia do terapii</span></div>
+      <div class="ph"><span>Terapia odcinka lędźwiowego</span></div>
+      <div class="ph"><span>Masaż karku i barków</span></div>
+    </div>
+    <p class="small rv" style="margin-top:18px">Sześć kafli to układ startowy — galerię można rozbudować w każdej chwili, bez zmian w projekcie strony.</p>
+  </div>
+</section>
+
 <!-- ============ OPINIE ============ -->
-<section class="sec sec--tint" id="opinie">
+<section class="sec" id="opinie">
   <div class="wrap">
     <div class="head-block rv">
       <p class="eyebrow">Opinie pacjentów</p>
@@ -1067,7 +1117,7 @@ body.is-locked { overflow: hidden; }
 </section>
 
 <!-- ============ CENNIK ============ -->
-<section class="sec" id="cennik">
+<section class="sec sec--tint" id="cennik">
   <div class="wrap">
     <div class="head-block rv">
       <p class="eyebrow">Cennik</p>
@@ -1089,7 +1139,7 @@ body.is-locked { overflow: hidden; }
 </section>
 
 <!-- ============ FAQ ============ -->
-<section class="sec sec--tint" id="faq">
+<section class="sec" id="faq">
   <div class="wrap">
     <div class="head-block rv">
       <p class="eyebrow">Częste pytania</p>
@@ -1103,6 +1153,10 @@ body.is-locked { overflow: hidden; }
       <details>
         <summary>Czy muszę mieć swoje ręczniki i olejki?</summary>
         <p>Nie. Przywożę świeże ręczniki, prześcieradła jednorazowe, olejki, bańki oraz aparat do fizykoterapii. Ty przygotowujesz tylko miejsce.</p>
+      </details>
+      <details>
+        <summary>Czy przyjmuje Pani też w gabinecie?</summary>
+        <p>Tak. Gabinet jest w Ogrodzieńcu — <span class="tbd">adres i godziny do potwierdzenia</span> — i jest profesjonalnie wyposażony. Wizyty domowe realizuję w soboty od 8:00 do 14:00; jeśli wolisz przyjechać do mnie albo potrzebujesz terminu w tygodniu, zadzwoń i ustalimy.</p>
       </details>
       <details>
         <summary>Czy dojazd jest dodatkowo płatny?</summary>
@@ -1145,10 +1199,11 @@ body.is-locked { overflow: hidden; }
           691 807 853
         </a>
         <div class="hours">
-          <div class="hours__row"><span>poniedziałek, środa, piątek</span><b>16:00–20:00</b></div>
-          <div class="hours__row"><span>sobota</span><b>9:00–13:00</b></div>
-          <div class="hours__row off"><span>wtorek, czwartek, niedziela</span><b>nie przyjmuję</b></div>
+          <div class="hours__row"><span>Wizyty domowe — sobota</span><b>8:00–14:00</b></div>
+          <div class="hours__row"><span>Wizyty w gabinecie</span><b class="tbd">godziny do potwierdzenia</b></div>
+          <div class="hours__row off"><span>Pozostałe dni</span><b class="tbd">do potwierdzenia</b></div>
         </div>
+        <p class="small" style="margin:-6px 0 18px">Gabinet: Ogrodzieniec, <span class="tbd">adres do potwierdzenia</span>.</p>
         <div class="ways">
           <a class="btn btn--outline" href="https://wa.me/48691807853" target="_blank" rel="noopener">
             <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="color:#25D366"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.02.24-3.46-.72-2.94-1.16-4.75-4.2-4.9-4.4-.14-.2-1.13-1.5-1.13-2.87 0-1.36.71-2.03.97-2.31.25-.29.55-.36.73-.36.19 0 .37 0 .53.01.17.01.4-.06.62.48.24.53.8 1.94.87 2.08.07.15.12.32.02.51-.1.2-.15.32-.29.5-.15.17-.31.38-.44.51-.15.14-.3.3-.13.59.17.29.75 1.24 1.61 2.01 1.1.98 2.03 1.29 2.32 1.43.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.39-.24.65-.14.27.1 1.69.8 1.98.94.29.15.48.22.55.34.07.13.07.75-.17 1.43z"/></svg>
@@ -1207,35 +1262,35 @@ body.is-locked { overflow: hidden; }
         <h4>Kontakt</h4>
         <div class="foot__list">
           <span style="color:#fff;font-weight:600">Marzena Tarczyńska</span>
+          <span style="font-size:14px">Fizjoterapeuta</span>
           <a href="tel:+48691807853">691 807 853</a>
           <a href="mailto:marzenatarczynska@wp.pl">marzenatarczynska@wp.pl</a>
           <a href="https://wa.me/48691807853" target="_blank" rel="noopener">WhatsApp</a>
-          <span>pon., śr., pt. 16:00–20:00</span>
-          <span>sob. 9:00–13:00</span>
+          <a href="https://www.facebook.com/FizjoMarzena/" target="_blank" rel="noopener">Facebook — FizjoMarzena</a>
+          <span>Wizyty domowe: sobota 8:00–14:00</span>
         </div>
       </div>
       <div>
         <h4>Gdzie dojeżdżam</h4>
         <div class="foot__towns">
-          <a href="#dojazd">Ogrodzieniec</a><a href="#dojazd">Zawiercie</a><a href="#dojazd">Łazy</a><a href="#dojazd">Dąbrowa Górnicza</a><a href="#dojazd">Siewierz</a><a href="#dojazd">Poręba</a><a href="#dojazd">Myszków</a><a href="#dojazd">Włodowice</a><a href="#dojazd">Kroczyce</a><a href="#dojazd">Pilica</a><a href="#dojazd">Wolbrom</a><a href="#dojazd">Klucze</a><a href="#dojazd">Olkusz</a><a href="#dojazd">Bolesław</a><a href="#dojazd">Bukowno</a><a href="#dojazd">Sławków</a>
+          <a href="#dojazd">Ogrodzieniec</a><a href="#dojazd">Zawiercie</a><a href="#dojazd">Łazy</a><a href="#dojazd">Niegowonice</a><a href="#dojazd">Chechło</a><a href="#dojazd">Kwaśniów</a><a href="#dojazd">Pilica</a><a href="#dojazd">Klucze</a><a href="#dojazd">Olkusz</a><a href="#dojazd">Bolesław</a><a href="#dojazd">Bukowno</a><a href="#dojazd">Sławków</a><a href="#dojazd">Siewierz</a><a href="#dojazd">Poręba</a><a href="#dojazd">Dąbrowa Górnicza</a><a href="#dojazd">Myszków</a><a href="#dojazd">Włodowice</a><a href="#dojazd">Kroczyce</a><a href="#dojazd">Wolbrom</a>
         </div>
       </div>
       <div>
         <h4>Strona</h4>
         <div class="foot__list">
-          <a href="#dolegliwosci">Z czym pomagam</a>
-          <a href="#uslugi">Zabiegi</a>
-          <a href="#dzieci">Dzieci i młodzież</a>
+          <a href="#top">Start</a>
+          <a href="#terapie">Terapie i masaże</a>
           <a href="#cennik">Cennik</a>
-          <a href="#dojazd">Obszar dojazdu</a>
+          <a href="#dojazd">Dojeżdżam do Ciebie</a>
           <a href="#omnie">O mnie</a>
-          <a href="#firmy">Dla firm i hoteli</a>
+          <a href="#galeria">Galeria</a>
           <a href="#kontakt">Kontakt</a>
         </div>
       </div>
     </div>
     <div class="foot__bar">
-      <span>© <span id="year">2026</span> Marzena Tarczyńska — Fizjoterapia, wizyty domowe</span>
+      <span>© <span id="year">2026</span> FizjoMarzena — Rehabilitacja dzieci i dorosłych. Fizjoterapia</span>
       <span class="tbd">Nazwa firmy i NIP do uzupełnienia</span>
     </div>
   </div>
