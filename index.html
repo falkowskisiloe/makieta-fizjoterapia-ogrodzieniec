@@ -11,10 +11,10 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Figtree:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Figtree:wght@400;500;600&family=Lobster&display=swap">
 <style>
 /* ============================================================
-   FIZJOTERAPIA MARZENA TARCZYŃSKA — makieta v8
+   FIZJOTERAPIA MARZENA TARCZYŃSKA — makieta v9
    Kolorystyka: niebieski hero, biel i jasny błękit sekcji, granatowe przyciski, róż z wizytówki
    ============================================================ */
 
@@ -350,16 +350,14 @@ body.is-locked { overflow: hidden; }
 .hero__service:hover { background: #3B3657; border-color: var(--pink-400); }
 .hero__service:focus-visible { outline-color: var(--pink-400); }
 @media (min-width: 560px) { .hero__services { grid-template-columns: 1fr 1fr; } }
-.brand-ribbon { display: block; width: 100%; height: 120px; pointer-events: none; }
-.hero__media .brand-ribbon { position: absolute; left: 0; bottom: 22px; height: 110px; }
+.brand-ribbon { display: block; width: 100%; height: auto; aspect-ratio: 25 / 9; pointer-events: none; }
+.hero__media .brand-ribbon { position: absolute; left: 0; bottom: 0; height: auto; }
 .brand-ribbon__pink { fill: var(--pink-400); }
-.brand-ribbon__gray { fill: #D5DCE3; }
-.wave__pink { fill: var(--pink-400); }
 #omnie .h2 .name-accent { color: var(--pink-700); }
 .eyebrow::before { background: var(--pink-700); }
 .sec--navy .eyebrow::before { background: var(--pink-400); }
 .tab[aria-selected="true"] { box-shadow: inset 0 -3px 0 var(--pink-400); }
-.foot > .brand-ribbon { position: absolute; top: 0; left: 0; height: 42px; }
+.foot > .brand-ribbon { position: static; width: min(100%, 360px); margin: 0 0 28px auto; height: auto; }
 
 /* ---------- pasek faktów ---------- */
 
@@ -615,7 +613,7 @@ body.is-locked { overflow: hidden; }
 
 /* ---------- stopka ---------- */
 
-.foot { position: relative; background: var(--navy-900); color: #B7CEE0; padding: 90px 0 0; }
+.foot { position: relative; background: var(--navy-900); color: #B7CEE0; padding: 0; }
 .foot h4 {
   font-family: var(--f-head); font-size: 12.5px; font-weight: 600; letter-spacing: .14em;
   text-transform: uppercase; color: var(--blue-300); margin-bottom: 16px;
@@ -696,13 +694,13 @@ body.is-locked { overflow: hidden; }
 
 /* Wariant 6: niebieski początek, jasna treść, granatowe CTA i róż z wizytówki. */
 :root { --pink-on-blue: #FFEFF7; }
-.hero, .drawer { background: var(--blue-600); }
+.hero, .drawer { background: #174665; }
 .hero__glow, .b2b__in::after { display: none; }
 .hero__lead, .hero__towns, .hero__identity > p:last-child,
 .sec--navy p, .sec--navy li, .sec--navy .lead, .sec--navy .eyebrow,
 .drawer__foot { color: var(--white); }
 .hero h1 mark { color: var(--white); }
-.hero__name, .hero__identity .eyebrow { color: var(--pink-on-blue); }
+.hero__name, .hero__identity .eyebrow { color: var(--pink-400); }
 .hero__identity .eyebrow::before, .sec--navy .eyebrow::before { background: var(--pink-400); }
 .hero__towns a { color: var(--white); }
 .drawer nav a { border-color: rgba(255,255,255,.5); }
@@ -728,9 +726,9 @@ body.is-locked { overflow: hidden; }
 .btn--primary { box-shadow: 0 8px 22px -10px rgba(14,43,68,.5); }
 .btn--primary:hover, .btn--onnavy:hover, .btn--ghostnavy:hover,
 .head .icobtn--call:hover { background: var(--navy-800); color: var(--white); border-color: var(--navy-800); }
-.topbar { background: var(--blue-100); color: var(--navy-900); }
+.topbar { background: var(--pink-400); color: var(--navy-900); }
 .topbar b, .topbar a { color: var(--navy-900); }
-.topbar a:hover { color: var(--blue-600); }
+.topbar a:hover { color: var(--navy-900); text-decoration: underline; }
 .memo { background: var(--gray-50); color: var(--muted); border-bottom: 1px solid var(--line); }
 .memo b, .memo > summary { color: var(--navy-900); }
 .memo a { color: var(--blue-600); }
@@ -785,6 +783,19 @@ body.is-locked { overflow: hidden; }
 }
 .hero__service::before { background: var(--pink-400); }
 
+
+/* Nazwa firmy: ozdobny krój inspirowany finalną wizytówką. */
+.hero__brand {
+  font-family: "Lobster", "Brush Script MT", "URW Chancery L", cursive;
+  font-size: clamp(44px, 6vw, 72px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--pink-400);
+  margin: 0 0 14px;
+}
+
 </style>
 </head>
 <body>
@@ -792,7 +803,7 @@ body.is-locked { overflow: hidden; }
 <div class="progress" id="progress"></div>
 
 <details class="memo" id="memo" open>
-  <summary><span>i</span>Makieta poglądowa — wersja 8 (czytelniejsze etykiety na niebieskim tle)</summary>
+  <summary><span>i</span>Makieta poglądowa — wersja 9 (FizjoMarzena i wstęga według wizytówki)</summary>
   <div class="memo__in">
     To nie jest gotowa strona. Teksty, kolejność sekcji, kolory i zdjęcia można jeszcze zmienić.
     <div class="memo__row">
@@ -873,7 +884,7 @@ body.is-locked { overflow: hidden; }
   <div class="wrap hero__in">
     <div>
       <div class="hero__identity">
-        <p class="eyebrow">FizjoMarzena</p>
+        <p class="hero__brand">FizjoMarzena</p>
         <p class="hero__name">Marzena Tarczyńska <span role="img" aria-label="Złożone dłonie">🙏</span></p>
         <p>Rehabilitacja dzieci i dorosłych z dojazdem</p>
       </div>
@@ -904,15 +915,14 @@ body.is-locked { overflow: hidden; }
     </div>
     <div class="hero__media">
       <div class="ph ph--portrait"><span>Zdjęcie: Marzena Tarczyńska — portret po pas, światło dzienne z okna, tło naturalne</span></div>
-      <svg class="brand-ribbon" viewBox="0 0 1000 160" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-        <path class="brand-ribbon__gray" d="M0 0 C310 2 390 130 640 119 C800 112 900 98 1000 113 L1000 138 C800 124 755 145 640 140 C390 132 330 36 0 40 Z"/>
-        <path class="brand-ribbon__pink" d="M0 6 C300 12 425 135 660 130 C820 127 900 137 1000 132 L1000 158 C785 157 745 148 650 147 C398 140 326 51 0 47 Z"/>
+      <svg class="brand-ribbon" viewBox="0 0 1000 360" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+        <path class="brand-ribbon__pink" d="M0 0 C225 20 410 70 500 180 C350 80 155 75 0 60 Z"/>
+        <path class="brand-ribbon__pink" d="M0 0 C225 20 410 70 500 180 C350 80 155 75 0 60 Z" transform="rotate(180 500 180)"/>
       </svg>
     </div>
   </div>
   <div class="wave-holder" aria-hidden="true">
     <svg class="wave" viewBox="0 0 1440 100" preserveAspectRatio="none" role="presentation">
-      <path d="M0,44 C260,96 520,4 760,34 C980,62 1220,104 1440,58 L1440,100 L0,100 Z" class="wave__pink"/>
       <path d="M0,62 C240,104 500,26 760,52 C1000,76 1230,110 1440,74 L1440,100 L0,100 Z" fill="#FFFFFF"/>
     </svg>
   </div>
@@ -1395,9 +1405,9 @@ body.is-locked { overflow: hidden; }
 
 <!-- ============ STOPKA ============ -->
 <footer class="foot">
-  <svg class="brand-ribbon" viewBox="0 0 1000 160" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-        <path class="brand-ribbon__gray" d="M0 0 C310 2 390 130 640 119 C800 112 900 98 1000 113 L1000 138 C800 124 755 145 640 140 C390 132 330 36 0 40 Z"/>
-        <path class="brand-ribbon__pink" d="M0 6 C300 12 425 135 660 130 C820 127 900 137 1000 132 L1000 158 C785 157 745 148 650 147 C398 140 326 51 0 47 Z"/>
+  <svg class="brand-ribbon" viewBox="0 0 1000 360" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+        <path class="brand-ribbon__pink" d="M0 0 C225 20 410 70 500 180 C350 80 155 75 0 60 Z"/>
+        <path class="brand-ribbon__pink" d="M0 0 C225 20 410 70 500 180 C350 80 155 75 0 60 Z" transform="rotate(180 500 180)"/>
       </svg>
   <div class="wrap">
     <div class="foot__cols">
