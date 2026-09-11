@@ -14,8 +14,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Figtree:wght@400;500;600&display=swap">
 <style>
 /* ============================================================
-   FIZJOTERAPIA MARZENA TARCZYŃSKA — makieta v5
-   Kolorystyka: niebieskie tła, granatowe przyciski, róż z wizytówki i jasne powierzchnie
+   FIZJOTERAPIA MARZENA TARCZYŃSKA — makieta v6
+   Kolorystyka: niebieski hero, biel i jasny błękit sekcji, granatowe przyciski, róż z wizytówki
    ============================================================ */
 
 :root {
@@ -694,20 +694,20 @@ body.is-locked { overflow: hidden; }
 .rv--armed { opacity: 0; transform: translateY(18px); }
 .rv--armed.rv--in { opacity: 1; transform: none; transition: opacity .55s ease, transform .55s cubic-bezier(.2,.7,.3,1); }
 
-/* Wariant 5: niebieskie tła w kolorze wcześniejszego przycisku telefonu. */
+/* Wariant 6: niebieski początek, jasna treść, granatowe CTA i róż z wizytówki. */
 :root { --pink-on-blue: #FFEFF7; }
-.hero, .sec--navy, .drawer, .b2b__in, .foot { background: var(--blue-600); }
+.hero, .drawer { background: var(--blue-600); }
 .hero__glow, .b2b__in::after { display: none; }
 .hero__lead, .hero__towns, .hero__identity > p:last-child,
 .sec--navy p, .sec--navy li, .sec--navy .lead, .sec--navy .eyebrow,
-.drawer__foot, .b2b p, .b2b .eyebrow, .foot, .foot a { color: var(--white); }
+.drawer__foot { color: var(--white); }
 .hero h1 mark { color: var(--white); }
 .hero__name, .hero__identity .eyebrow { color: var(--pink-on-blue); }
 .hero__identity .eyebrow::before, .sec--navy .eyebrow::before { background: var(--pink-400); }
-.hero__towns a, .pills a { color: var(--white); }
-.chip, .pills a, .drawer nav a, .foot__towns a { border-color: rgba(255,255,255,.5); }
+.hero__towns a { color: var(--white); }
+.chip, .drawer nav a { border-color: rgba(255,255,255,.5); }
 .chip { color: var(--white); background: transparent; }
-.chip svg, .kids li svg { color: var(--white); }
+.chip svg { color: var(--white); }
 .hero__service { background: var(--white); color: var(--navy-900); border-color: var(--white); }
 .hero__service::before { background: var(--pink-700); }
 .hero__service:hover { background: #FBEAF3; border-color: var(--pink-400); }
@@ -734,7 +734,28 @@ body.is-locked { overflow: hidden; }
 .memo { background: var(--gray-50); color: var(--muted); border-bottom: 1px solid var(--line); }
 .memo b, .memo > summary { color: var(--navy-900); }
 .memo a { color: var(--blue-600); }
-.foot__bar { border-color: rgba(255,255,255,.5); }
+
+/* Jasne powierzchnie w dalszej części strony. */
+.sec--soft { background: var(--blue-50); }
+.sec--soft h2, .sec--soft h3 { color: var(--navy-900); }
+.sec--soft p, .sec--soft li { color: var(--muted); }
+.sec--soft .eyebrow { color: var(--blue-600); }
+.sec--soft .eyebrow::before { background: var(--pink-700); }
+.kids li svg { color: var(--pink-700); }
+.sec--soft .pills a { background: var(--white); color: var(--navy-900); border-color: var(--line); }
+.sec--soft .pills a:hover { background: var(--blue-100); border-color: var(--blue-600); }
+.b2b__in { background: var(--blue-50); border: 1px solid var(--line); }
+.b2b h2 { color: var(--navy-900); }
+.b2b p { color: var(--muted); }
+.b2b .eyebrow { color: var(--blue-600); }
+.b2b .eyebrow::before { background: var(--pink-700); }
+.foot { background: var(--blue-100); color: var(--navy-900); }
+.foot h4 { color: var(--pink-700); }
+.foot a { color: var(--navy-900); }
+.foot a:hover { color: var(--blue-600); }
+.foot__towns a { background: var(--white); border-color: #BED2E2; }
+.foot__bar { color: var(--muted); border-color: #BED2E2; }
+
 
 </style>
 </head>
@@ -743,7 +764,7 @@ body.is-locked { overflow: hidden; }
 <div class="progress" id="progress"></div>
 
 <details class="memo" id="memo" open>
-  <summary><span>i</span>Makieta poglądowa — wersja 5 (jaśniejszy niebieski, granatowe przyciski i różowa wstęga)</summary>
+  <summary><span>i</span>Makieta poglądowa — wersja 6 (niebieski początek, jasne sekcje i różowe akcenty)</summary>
   <div class="memo__in">
     To nie jest gotowa strona. Teksty, kolejność sekcji, kolory i zdjęcia można jeszcze zmienić.
     <div class="memo__row">
@@ -1036,7 +1057,7 @@ body.is-locked { overflow: hidden; }
 </section>
 
 <!-- ============ DZIECI ============ -->
-<section class="sec sec--navy" id="dzieci">
+<section class="sec sec--soft" id="dzieci">
   <div class="wrap">
     <div class="kids">
       <div class="rv">
@@ -1044,10 +1065,10 @@ body.is-locked { overflow: hidden; }
         <h2 class="h2">Korekcja wad postawy i skolioz — u dziecka w domu</h2>
         <p class="lead">Badania przesiewowe w szkole albo wizyta u ortopedy kończą się zwykle zaleceniem: „ćwiczenia korekcyjne”. Problem w tym, że trzeba je wykonywać regularnie, a dojazdy do gabinetu po lekcjach szybko się kończą. Dlatego przyjeżdżam do domu.</p>
         <ul>
-          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b style="color:#fff">Dziecko jest w znanym otoczeniu</b> — bez poczekalni i bez stresu, a przy młodszych dzieciach to często warunek, żeby wizyta w ogóle się udała.</span></li>
-          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b style="color:#fff">Rodzic uczy się ćwiczeń razem z dzieckiem</b> — pokazuję, na co patrzeć i jakie błędy poprawiać, żeby praca między wizytami miała sens.</span></li>
-          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b style="color:#fff">Widzę warunki, w których dziecko żyje</b> — biurko, krzesło, plecak, łóżko. Połowa problemów z postawą siedzi właśnie tam.</span></li>
-          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b style="color:#fff">Terminy po szkole</b> — wizyty popołudniowe i sobotnie przedpołudniowe.</span></li>
+          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b style="color:var(--navy-900)">Dziecko jest w znanym otoczeniu</b> — bez poczekalni i bez stresu, a przy młodszych dzieciach to często warunek, żeby wizyta w ogóle się udała.</span></li>
+          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b style="color:var(--navy-900)">Rodzic uczy się ćwiczeń razem z dzieckiem</b> — pokazuję, na co patrzeć i jakie błędy poprawiać, żeby praca między wizytami miała sens.</span></li>
+          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b style="color:var(--navy-900)">Widzę warunki, w których dziecko żyje</b> — biurko, krzesło, plecak, łóżko. Połowa problemów z postawą siedzi właśnie tam.</span></li>
+          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b style="color:var(--navy-900)">Terminy po szkole</b> — wizyty popołudniowe i sobotnie przedpołudniowe.</span></li>
         </ul>
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
           <a class="btn btn--onnavy" href="tel:+48691807853">Zadzwoń i opisz sytuację</a>
@@ -1098,7 +1119,7 @@ body.is-locked { overflow: hidden; }
 </section>
 
 <!-- ============ OBSZAR DOJAZDU ============ -->
-<section class="sec sec--navy" id="dojazd">
+<section class="sec sec--soft" id="dojazd">
   <div class="wrap">
     <div class="area">
       <div class="rv">
@@ -1108,7 +1129,7 @@ body.is-locked { overflow: hidden; }
         <div class="pills">
           <a href="#dojazd">Ogrodzieniec</a><a href="#dojazd">Zawiercie</a><a href="#dojazd">Łazy</a><a href="#dojazd">Niegowonice</a><a href="#dojazd">Chechło</a><a href="#dojazd">Kwaśniów</a><a href="#dojazd">Pilica</a><a href="#dojazd">Klucze</a><a href="#dojazd">Olkusz</a><a href="#dojazd">Bolesław</a><a href="#dojazd">Bukowno</a><a href="#dojazd">Sławków</a><a href="#dojazd">Siewierz</a><a href="#dojazd">Poręba</a><a href="#dojazd">Dąbrowa Górnicza</a><a href="#dojazd">Myszków</a><a href="#dojazd">Włodowice</a><a href="#dojazd">Kroczyce</a><a href="#dojazd">Wolbrom</a>
         </div>
-        <p class="small" style="color:var(--white)">Dojazd do <span class="tbd">— km</span> w cenie zabiegu. Powyżej — dopłata <span class="tbd">— zł</span>. Możesz też przyjechać do gabinetu — ul. Mickiewicza 8.</p>
+        <p class="small">Dojazd do <span class="tbd">— km</span> w cenie zabiegu. Powyżej — dopłata <span class="tbd">— zł</span>. Możesz też przyjechać do gabinetu — ul. Mickiewicza 8.</p>
       </div>
       <div class="rv">
         <div class="ph ph--map"><span>Mapa: okrąg 30 km wokół Ogrodzieńca. Statyczny obrazek — kliknięcie otwiera Mapy Google</span></div>
@@ -1355,7 +1376,7 @@ body.is-locked { overflow: hidden; }
       <div>
         <h4>Kontakt</h4>
         <div class="foot__list">
-          <span style="color:var(--pink-on-blue);font-weight:600">Marzena Tarczyńska</span>
+          <span style="color:var(--pink-700);font-weight:600">Marzena Tarczyńska</span>
           <span style="font-size:14px">Fizjoterapeuta</span>
           <a href="tel:+48691807853">691 807 853</a>
           <a href="mailto:marzenatarczynska@wp.pl">marzenatarczynska@wp.pl</a>
