@@ -14,8 +14,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Figtree:wght@400;500;600&display=swap">
 <style>
 /* ============================================================
-   FIZJOTERAPIA MARZENA TARCZYŃSKA — makieta v4
-   Kolorystyka: granat i niebieski, różowa wstęga z finalnej wizytówki, jasna szarość
+   FIZJOTERAPIA MARZENA TARCZYŃSKA — makieta v5
+   Kolorystyka: niebieskie tła, granatowe przyciski, róż z wizytówki i jasne powierzchnie
    ============================================================ */
 
 :root {
@@ -693,6 +693,49 @@ body.is-locked { overflow: hidden; }
 
 .rv--armed { opacity: 0; transform: translateY(18px); }
 .rv--armed.rv--in { opacity: 1; transform: none; transition: opacity .55s ease, transform .55s cubic-bezier(.2,.7,.3,1); }
+
+/* Wariant 5: niebieskie tła w kolorze wcześniejszego przycisku telefonu. */
+:root { --pink-on-blue: #FFEFF7; }
+.hero, .sec--navy, .drawer, .b2b__in, .foot { background: var(--blue-600); }
+.hero__glow, .b2b__in::after { display: none; }
+.hero__lead, .hero__towns, .hero__identity > p:last-child,
+.sec--navy p, .sec--navy li, .sec--navy .lead, .sec--navy .eyebrow,
+.drawer__foot, .b2b p, .b2b .eyebrow, .foot, .foot a { color: var(--white); }
+.hero h1 mark { color: var(--white); }
+.hero__name, .hero__identity .eyebrow { color: var(--pink-on-blue); }
+.hero__identity .eyebrow::before, .sec--navy .eyebrow::before { background: var(--pink-400); }
+.hero__towns a, .pills a { color: var(--white); }
+.chip, .pills a, .drawer nav a, .foot__towns a { border-color: rgba(255,255,255,.5); }
+.chip { color: var(--white); background: transparent; }
+.chip svg, .kids li svg { color: var(--white); }
+.hero__service { background: var(--white); color: var(--navy-900); border-color: var(--white); }
+.hero__service::before { background: var(--pink-700); }
+.hero__service:hover { background: #FBEAF3; border-color: var(--pink-400); }
+.hero__media .ph, .ph--map {
+  background: repeating-linear-gradient(135deg, #DCEBF7 0 12px, #CFE3F4 12px 24px);
+  border-color: #A9D0EA;
+}
+.hero__media .ph span, .ph--map span { background: var(--white); color: var(--navy-900); }
+.head { background: var(--white); border-bottom: 1px solid var(--line); }
+.brand__txt b { color: var(--pink-700); }
+.brand__txt em, .nav a { color: var(--navy-900); }
+.nav a:hover { color: var(--blue-600); }
+.nav a::after { background: var(--pink-700); }
+.head .icobtn { color: var(--navy-900); border-color: var(--line); background: var(--blue-50); }
+.head .icobtn:hover { background: var(--blue-100); }
+.btn--primary, .btn--onnavy, .btn--ghostnavy, .mbar__call,
+.head .icobtn--call { background: var(--navy-900); color: var(--white); border-color: var(--navy-900); }
+.btn--primary { box-shadow: 0 8px 22px -10px rgba(14,43,68,.5); }
+.btn--primary:hover, .btn--onnavy:hover, .btn--ghostnavy:hover,
+.head .icobtn--call:hover { background: var(--navy-800); color: var(--white); border-color: var(--navy-800); }
+.topbar { background: var(--blue-100); color: var(--navy-900); }
+.topbar b, .topbar a { color: var(--navy-900); }
+.topbar a:hover { color: var(--blue-600); }
+.memo { background: var(--gray-50); color: var(--muted); border-bottom: 1px solid var(--line); }
+.memo b, .memo > summary { color: var(--navy-900); }
+.memo a { color: var(--blue-600); }
+.foot__bar { border-color: rgba(255,255,255,.5); }
+
 </style>
 </head>
 <body>
@@ -700,7 +743,7 @@ body.is-locked { overflow: hidden; }
 <div class="progress" id="progress"></div>
 
 <details class="memo" id="memo" open>
-  <summary><span>i</span>Makieta poglądowa — wersja 4 (granat i różowa wstęga z wizytówki)</summary>
+  <summary><span>i</span>Makieta poglądowa — wersja 5 (jaśniejszy niebieski, granatowe przyciski i różowa wstęga)</summary>
   <div class="memo__in">
     To nie jest gotowa strona. Teksty, kolejność sekcji, kolory i zdjęcia można jeszcze zmienić.
     <div class="memo__row">
@@ -1065,7 +1108,7 @@ body.is-locked { overflow: hidden; }
         <div class="pills">
           <a href="#dojazd">Ogrodzieniec</a><a href="#dojazd">Zawiercie</a><a href="#dojazd">Łazy</a><a href="#dojazd">Niegowonice</a><a href="#dojazd">Chechło</a><a href="#dojazd">Kwaśniów</a><a href="#dojazd">Pilica</a><a href="#dojazd">Klucze</a><a href="#dojazd">Olkusz</a><a href="#dojazd">Bolesław</a><a href="#dojazd">Bukowno</a><a href="#dojazd">Sławków</a><a href="#dojazd">Siewierz</a><a href="#dojazd">Poręba</a><a href="#dojazd">Dąbrowa Górnicza</a><a href="#dojazd">Myszków</a><a href="#dojazd">Włodowice</a><a href="#dojazd">Kroczyce</a><a href="#dojazd">Wolbrom</a>
         </div>
-        <p class="small" style="color:#A9C3D6">Dojazd do <span class="tbd">— km</span> w cenie zabiegu. Powyżej — dopłata <span class="tbd">— zł</span>. Możesz też przyjechać do gabinetu — ul. Mickiewicza 8.</p>
+        <p class="small" style="color:var(--white)">Dojazd do <span class="tbd">— km</span> w cenie zabiegu. Powyżej — dopłata <span class="tbd">— zł</span>. Możesz też przyjechać do gabinetu — ul. Mickiewicza 8.</p>
       </div>
       <div class="rv">
         <div class="ph ph--map"><span>Mapa: okrąg 30 km wokół Ogrodzieńca. Statyczny obrazek — kliknięcie otwiera Mapy Google</span></div>
@@ -1312,7 +1355,7 @@ body.is-locked { overflow: hidden; }
       <div>
         <h4>Kontakt</h4>
         <div class="foot__list">
-          <span style="color:var(--pink-400);font-weight:600">Marzena Tarczyńska</span>
+          <span style="color:var(--pink-on-blue);font-weight:600">Marzena Tarczyńska</span>
           <span style="font-size:14px">Fizjoterapeuta</span>
           <a href="tel:+48691807853">691 807 853</a>
           <a href="mailto:marzenatarczynska@wp.pl">marzenatarczynska@wp.pl</a>
