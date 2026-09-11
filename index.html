@@ -14,8 +14,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Figtree:wght@400;500;600&display=swap">
 <style>
 /* ============================================================
-   FIZJOTERAPIA MARZENA TARCZYŃSKA — makieta v2
-   Kolorystyka na podstawie wizytówki: biel, ciemny granat, błękit
+   FIZJOTERAPIA MARZENA TARCZYŃSKA — makieta v4
+   Kolorystyka: granat i niebieski, różowa wstęga z finalnej wizytówki, jasna szarość
    ============================================================ */
 
 :root {
@@ -29,6 +29,9 @@
   --blue-100: #DCEBF7;
   --blue-50:  #EFF6FC;
   --white:    #FFFFFF;
+  --pink-400: #E88BBD;
+  --pink-700: #A82B70;
+  --gray-50: #F4F5F7;
 
   --ink:   #14212C;
   --muted: #55677A;
@@ -100,7 +103,7 @@ section { scroll-margin-top: 84px; }
 @media (min-width: 768px) { .wrap { padding: 0 32px; } }
 
 .sec { padding: var(--pad-sec) 0; position: relative; }
-.sec--tint { background: var(--blue-50); }
+.sec--tint { background: var(--gray-50); }
 .sec--navy { background: var(--navy-900); }
 .sec--navy h2, .sec--navy h3 { color: var(--white); }
 .sec--navy p, .sec--navy li { color: #C3D6E6; }
@@ -202,7 +205,7 @@ h3.h3 { font-size: clamp(20px, 2.4vw, 24px); line-height: 1.24; }
 
 .progress {
   position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 60;
-  background: var(--blue-500); transform: scaleX(0); transform-origin: 0 50%;
+  background: var(--pink-400); transform: scaleX(0); transform-origin: 0 50%;
   will-change: transform;
 }
 
@@ -226,7 +229,7 @@ h3.h3 { font-size: clamp(20px, 2.4vw, 24px); line-height: 1.24; }
 }
 .brand__txt b {
   display: block; font-family: var(--f-head); font-weight: 700; font-size: 15.5px;
-  color: #fff; line-height: 1.1; white-space: nowrap;
+  color: var(--pink-400); line-height: 1.1; white-space: nowrap;
 }
 .brand__txt em {
   display: block; font-style: normal; font-size: 10.5px; font-weight: 600;
@@ -248,7 +251,7 @@ h3.h3 { font-size: clamp(20px, 2.4vw, 24px); line-height: 1.24; }
 }
 .nav a::after {
   content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
-  background: var(--blue-300); transform: scaleX(0); transform-origin: 0 50%;
+  background: var(--pink-400); transform: scaleX(0); transform-origin: 0 50%;
   transition: transform .2s ease;
 }
 .nav a:hover { color: #fff; }
@@ -303,9 +306,9 @@ body.is-locked { overflow: hidden; }
   background: radial-gradient(circle, rgba(46,134,199,.42) 0%, rgba(46,134,199,0) 68%);
   pointer-events: none;
 }
-.hero__in { position: relative; display: grid; gap: 36px; padding: 48px 0 8px; }
+.hero__in { position: relative; display: grid; gap: 36px; padding: 48px 20px 28px; }
 @media (min-width: 900px) {
-  .hero__in { grid-template-columns: 1.08fr .92fr; gap: 56px; align-items: center; padding: 72px 0 24px; }
+  .hero__in { grid-template-columns: 1.08fr .92fr; gap: 56px; align-items: center; padding: 72px 32px 36px; }
 }
 .hero h1 {
   color: #fff; font-size: clamp(31px, 5.6vw, 54px); line-height: 1.08; margin-bottom: 18px;
@@ -325,9 +328,38 @@ body.is-locked { overflow: hidden; }
   padding: 8px 14px; border-radius: 100px;
 }
 .chip svg { color: var(--blue-300); flex: none; }
-.hero__media { position: relative; }
+.hero__media { position: relative; overflow: hidden; border-radius: var(--r-m); }
 .hero__media .ph { border-color: #3E7099; background: repeating-linear-gradient(135deg, #1A4767 0 12px, #1E5077 12px 24px); }
 .hero__media .ph span { background: rgba(9,26,41,.86); color: var(--blue-100); }
+
+
+/* Różowa wstęga i akcenty z finalnej wizytówki. Granat pozostaje tłem. */
+.hero__identity { margin-bottom: 20px; }
+.hero__identity .eyebrow { color: var(--pink-400); margin-bottom: 8px; letter-spacing: .12em; }
+.hero__identity .eyebrow::before { background: var(--pink-400); }
+.hero__name { color: var(--pink-400); font-family: var(--f-head); font-size: clamp(20px, 2.8vw, 28px); font-weight: 600; line-height: 1.3; }
+.hero__identity > p:last-child { color: #D3E4F0; font-size: 14px; margin-top: 8px; }
+.hero__services { display: grid; grid-template-columns: 1fr; gap: 8px; margin: 14px 0 0; }
+.hero__service {
+  display: flex; align-items: center; gap: 10px; min-height: 48px;
+  padding: 11px 14px; border: 1px solid #79536F; border-radius: 10px;
+  background: #22334D; color: #fff; font-size: 14px; line-height: 1.45;
+  text-decoration: none; transition: background-color .18s, border-color .18s;
+}
+.hero__service::before { content: ""; width: 6px; height: 6px; flex: none; border-radius: 50%; background: var(--pink-400); }
+.hero__service:hover { background: #3B3657; border-color: var(--pink-400); }
+.hero__service:focus-visible { outline-color: var(--pink-400); }
+@media (min-width: 560px) { .hero__services { grid-template-columns: 1fr 1fr; } }
+.brand-ribbon { display: block; width: 100%; height: 120px; pointer-events: none; }
+.hero__media .brand-ribbon { position: absolute; left: 0; bottom: 22px; height: 110px; }
+.brand-ribbon__pink { fill: var(--pink-400); }
+.brand-ribbon__gray { fill: #D5DCE3; }
+.wave__pink { fill: var(--pink-400); }
+#omnie .h2 .name-accent { color: var(--pink-700); }
+.eyebrow::before { background: var(--pink-700); }
+.sec--navy .eyebrow::before { background: var(--pink-400); }
+.tab[aria-selected="true"] { box-shadow: inset 0 -3px 0 var(--pink-400); }
+.foot > .brand-ribbon { position: absolute; top: 0; left: 0; height: 42px; }
 
 /* ---------- pasek faktów ---------- */
 
@@ -409,7 +441,7 @@ body.is-locked { overflow: hidden; }
 
 .about { display: grid; gap: 32px; align-items: start; }
 @media (min-width: 900px) { .about { grid-template-columns: 36% 1fr; gap: 52px; } }
-.about__cap { font-size: 14.5px; color: var(--muted); margin-top: 12px; }
+.about__cap { font-size: 14.5px; color: var(--pink-700); margin-top: 12px; }
 .about p + p { margin-top: 15px; }
 .creds { display: grid; gap: 10px; margin-top: 22px; padding: 20px; background: var(--blue-50); border-radius: var(--r-m); }
 .creds div { display: flex; gap: 11px; font-size: 15.5px; line-height: 1.5; }
@@ -583,7 +615,7 @@ body.is-locked { overflow: hidden; }
 
 /* ---------- stopka ---------- */
 
-.foot { background: var(--navy-900); color: #B7CEE0; padding: 56px 0 0; }
+.foot { position: relative; background: var(--navy-900); color: #B7CEE0; padding: 90px 0 0; }
 .foot h4 {
   font-family: var(--f-head); font-size: 12.5px; font-weight: 600; letter-spacing: .14em;
   text-transform: uppercase; color: var(--blue-300); margin-bottom: 16px;
@@ -668,11 +700,11 @@ body.is-locked { overflow: hidden; }
 <div class="progress" id="progress"></div>
 
 <details class="memo" id="memo" open>
-  <summary><span>i</span>Makieta poglądowa — wersja 3 (uwagi z 8 września wprowadzone)</summary>
+  <summary><span>i</span>Makieta poglądowa — wersja 4 (granat i różowa wstęga z wizytówki)</summary>
   <div class="memo__in">
     To nie jest gotowa strona. Teksty, kolejność sekcji, kolory i zdjęcia można jeszcze zmienić.
     <div class="memo__row">
-      <span><i class="sw sw--tbd"></i> <b>podświetlone</b> = dane do potwierdzenia (ceny, adres gabinetu, godziny w tygodniu)</span>
+      <span><i class="sw sw--tbd"></i> <b>podświetlone</b> = dane do potwierdzenia (ceny, godziny w tygodniu)</span>
       <span><i class="sw sw--ph"></i> <b>zakreskowane</b> = miejsce na zdjęcie</span>
     </div>
   </div>
@@ -748,7 +780,11 @@ body.is-locked { overflow: hidden; }
   <div class="hero__glow" aria-hidden="true"></div>
   <div class="wrap hero__in">
     <div>
-      <p class="eyebrow">Marzena Tarczyńska 🙏 Rehabilitacja z dojazdem</p>
+      <div class="hero__identity">
+        <p class="eyebrow">FizjoMarzena</p>
+        <p class="hero__name">Marzena Tarczyńska <span role="img" aria-label="Złożone dłonie">🙏</span></p>
+        <p>Rehabilitacja dzieci i dorosłych z dojazdem</p>
+      </div>
       <h1>Fizjoterapia i masaż <mark>u Ciebie w domu</mark> — Ogrodzieniec i okolice do 30 km</h1>
       <p class="hero__lead">Dyplomowany terapeuta metody FITS. Wierzę, że to, co robię, pomoże innym. Przyjeżdżam z własnym stołem, wiedzą i doświadczeniem — Ty przygotowujesz tylko dwa metry wolnej podłogi. Wizyty także w gabinecie.</p>
       <div class="hero__cta">
@@ -766,15 +802,25 @@ body.is-locked { overflow: hidden; }
         <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Dzieci i dorośli</span>
         <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Także wizyty w gabinecie</span>
       </div>
+      <nav class="hero__services" aria-label="Główne usługi">
+        <a class="hero__service" href="#terapie" data-service-tab="t2">Korekcja wad postawy i skolioz</a>
+        <a class="hero__service" href="#terapie" data-service-tab="t1">Rehabilitacja ortopedyczna</a>
+        <a class="hero__service" href="#terapie" data-service-tab="t1">Terapia bólów kręgosłupa</a>
+        <a class="hero__service" href="#terapie" data-service-tab="t3">Masaż leczniczy i Taping</a>
+      </nav>
       <p class="hero__towns">Zawiercie · Łazy · Niegowonice · Chechło · Kwaśniów · Pilica i 150 innych miejscowości — <a href="#dojazd">sprawdź, czy dojeżdżam do Ciebie</a></p>
     </div>
     <div class="hero__media">
       <div class="ph ph--portrait"><span>Zdjęcie: Marzena Tarczyńska — portret po pas, światło dzienne z okna, tło naturalne</span></div>
+      <svg class="brand-ribbon" viewBox="0 0 1000 160" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path class="brand-ribbon__gray" d="M0 0 C310 2 390 130 640 119 C800 112 900 98 1000 113 L1000 138 C800 124 755 145 640 140 C390 132 330 36 0 40 Z"/>
+        <path class="brand-ribbon__pink" d="M0 6 C300 12 425 135 660 130 C820 127 900 137 1000 132 L1000 158 C785 157 745 148 650 147 C398 140 326 51 0 47 Z"/>
+      </svg>
     </div>
   </div>
   <div class="wave-holder" aria-hidden="true">
     <svg class="wave" viewBox="0 0 1440 100" preserveAspectRatio="none" role="presentation">
-      <path d="M0,44 C260,96 520,4 760,34 C980,62 1220,104 1440,58 L1440,100 L0,100 Z" fill="#A9D0EA" opacity=".35"/>
+      <path d="M0,44 C260,96 520,4 760,34 C980,62 1220,104 1440,58 L1440,100 L0,100 Z" class="wave__pink"/>
       <path d="M0,62 C240,104 500,26 760,52 C1000,76 1230,110 1440,74 L1440,100 L0,100 Z" fill="#FFFFFF"/>
     </svg>
   </div>
@@ -850,7 +896,7 @@ body.is-locked { overflow: hidden; }
       <div class="tabs__list" role="tablist" aria-label="Rodzaje zabiegów">
         <button class="tab" role="tab" id="t1" aria-controls="p1" aria-selected="true">Kręgosłup i terapia bólu</button>
         <button class="tab" role="tab" id="t2" aria-controls="p2" aria-selected="false">Wady postawy i skoliozy</button>
-        <button class="tab" role="tab" id="t3" aria-controls="p3" aria-selected="false">Masaż leczniczy i relaks</button>
+        <button class="tab" role="tab" id="t3" aria-controls="p3" aria-selected="false">Masaż leczniczy i Taping</button>
         <button class="tab" role="tab" id="t4" aria-controls="p4" aria-selected="false">Sylwetka i uroda</button>
       </div>
 
@@ -858,7 +904,7 @@ body.is-locked { overflow: hidden; }
         <div class="panel__grid">
           <div class="ph ph--card"><span>Zdjęcie: terapia odcinka lędźwiowego, kadr z góry, twarz pacjenta niewidoczna</span></div>
           <div>
-            <h3 class="h3">Terapia bólów kręgosłupa i stanów po urazach</h3>
+            <h3 class="h3">Rehabilitacja ortopedyczna i terapia bólów kręgosłupa</h3>
             <div class="tags">
               <span class="tag">Terapia bólów kręgosłupa</span>
               <span class="tag">Masaż tkanek głębokich</span>
@@ -903,9 +949,10 @@ body.is-locked { overflow: hidden; }
         <div class="panel__grid">
           <div class="ph ph--card"><span>Zdjęcie: masaż karku i barków</span></div>
           <div>
-            <h3 class="h3">Masaż leczniczy, sportowy i relaksacyjny</h3>
+            <h3 class="h3">Masaż leczniczy i Taping</h3>
             <div class="tags">
               <span class="tag">Masaż leczniczy</span>
+              <span class="tag">Taping</span>
               <span class="tag">Masaż klasyczny</span>
               <span class="tag">Masaż sportowy</span>
               <span class="tag">Masaż relaksacyjny</span>
@@ -1018,7 +1065,7 @@ body.is-locked { overflow: hidden; }
         <div class="pills">
           <a href="#dojazd">Ogrodzieniec</a><a href="#dojazd">Zawiercie</a><a href="#dojazd">Łazy</a><a href="#dojazd">Niegowonice</a><a href="#dojazd">Chechło</a><a href="#dojazd">Kwaśniów</a><a href="#dojazd">Pilica</a><a href="#dojazd">Klucze</a><a href="#dojazd">Olkusz</a><a href="#dojazd">Bolesław</a><a href="#dojazd">Bukowno</a><a href="#dojazd">Sławków</a><a href="#dojazd">Siewierz</a><a href="#dojazd">Poręba</a><a href="#dojazd">Dąbrowa Górnicza</a><a href="#dojazd">Myszków</a><a href="#dojazd">Włodowice</a><a href="#dojazd">Kroczyce</a><a href="#dojazd">Wolbrom</a>
         </div>
-        <p class="small" style="color:#A9C3D6">Dojazd do <span class="tbd">— km</span> w cenie zabiegu. Powyżej — dopłata <span class="tbd">— zł</span>. Możesz też przyjechać do gabinetu — <span class="tbd">adres do potwierdzenia</span>.</p>
+        <p class="small" style="color:#A9C3D6">Dojazd do <span class="tbd">— km</span> w cenie zabiegu. Powyżej — dopłata <span class="tbd">— zł</span>. Możesz też przyjechać do gabinetu — ul. Mickiewicza 8.</p>
       </div>
       <div class="rv">
         <div class="ph ph--map"><span>Mapa: okrąg 30 km wokół Ogrodzieńca. Statyczny obrazek — kliknięcie otwiera Mapy Google</span></div>
@@ -1037,7 +1084,7 @@ body.is-locked { overflow: hidden; }
       </div>
       <div class="rv">
         <p class="eyebrow">Kto do Ciebie przyjedzie</p>
-        <h2 class="h2">Marzena Tarczyńska — fizjoterapeuta</h2>
+        <h2 class="h2"><span class="name-accent">Marzena Tarczyńska</span> — fizjoterapeuta</h2>
         <p style="font-size:17.5px">W fizjoterapii i rehabilitacji pracuję <b>od 2017 roku</b>. Prowadziłam terapię pacjentów małych i dużych — chodzących, na wózkach inwalidzkich oraz leżących — w szpitalach rehabilitacyjnych, w ośrodkach i zakładach rehabilitacyjno-opiekuńczo-leczniczych oraz w prywatnych gabinetach fizjoterapii i masażu.</p>
         <p style="font-size:17.5px">Obecnie rehabilituję dzieci i młodzież z niepełnosprawnością intelektualną i fizyczną w <b>Polskim Stowarzyszeniu na rzecz Osób z Niepełnosprawnością Intelektualną (PSONI)</b>. Jestem dyplomowanym terapeutą <b>metody FITS</b> — Funkcjonalnej Indywidualnej Terapii Skolioz.</p>
         <p style="font-size:17.5px">Do pacjentów <b>przyjeżdżam do domu</b> — bez dojazdu do gabinetu, bez poczekalni, bez wracania samochodem tuż po zabiegu. Przyjmuję też w gabinecie. Zawsze zaczynam od rozmowy o tym, co i od kiedy boli, oceniam ruchomość i dopiero potem dobieram technikę. Po wizycie dostajesz ćwiczenia do domu — bo sam zabieg bez pracy między wizytami wystarcza rzadko.</p>
@@ -1156,7 +1203,7 @@ body.is-locked { overflow: hidden; }
       </details>
       <details>
         <summary>Czy przyjmuje Pani też w gabinecie?</summary>
-        <p>Tak. Gabinet jest w Ogrodzieńcu — <span class="tbd">adres i godziny do potwierdzenia</span> — i jest profesjonalnie wyposażony. Wizyty domowe realizuję w soboty od 8:00 do 14:00; jeśli wolisz przyjechać do mnie albo potrzebujesz terminu w tygodniu, zadzwoń i ustalimy.</p>
+        <p>Tak. Gabinet jest w Ogrodzieńcu — ul. Mickiewicza 8, <span class="tbd">godziny do potwierdzenia</span> — i jest profesjonalnie wyposażony. Wizyty domowe realizuję w soboty od 8:00 do 14:00; jeśli wolisz przyjechać do mnie albo potrzebujesz terminu w tygodniu, zadzwoń i ustalimy.</p>
       </details>
       <details>
         <summary>Czy dojazd jest dodatkowo płatny?</summary>
@@ -1203,7 +1250,7 @@ body.is-locked { overflow: hidden; }
           <div class="hours__row"><span>Wizyty w gabinecie</span><b class="tbd">godziny do potwierdzenia</b></div>
           <div class="hours__row off"><span>Pozostałe dni</span><b class="tbd">do potwierdzenia</b></div>
         </div>
-        <p class="small" style="margin:-6px 0 18px">Gabinet: Ogrodzieniec, <span class="tbd">adres do potwierdzenia</span>.</p>
+        <p class="small" style="margin:-6px 0 18px">Gabinet: Ogrodzieniec, ul. Mickiewicza 8.</p>
         <div class="ways">
           <a class="btn btn--outline" href="https://wa.me/48691807853" target="_blank" rel="noopener">
             <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="color:#25D366"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.02.24-3.46-.72-2.94-1.16-4.75-4.2-4.9-4.4-.14-.2-1.13-1.5-1.13-2.87 0-1.36.71-2.03.97-2.31.25-.29.55-.36.73-.36.19 0 .37 0 .53.01.17.01.4-.06.62.48.24.53.8 1.94.87 2.08.07.15.12.32.02.51-.1.2-.15.32-.29.5-.15.17-.31.38-.44.51-.15.14-.3.3-.13.59.17.29.75 1.24 1.61 2.01 1.1.98 2.03 1.29 2.32 1.43.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.39-.24.65-.14.27.1 1.69.8 1.98.94.29.15.48.22.55.34.07.13.07.75-.17 1.43z"/></svg>
@@ -1256,12 +1303,16 @@ body.is-locked { overflow: hidden; }
 
 <!-- ============ STOPKA ============ -->
 <footer class="foot">
+  <svg class="brand-ribbon" viewBox="0 0 1000 160" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path class="brand-ribbon__gray" d="M0 0 C310 2 390 130 640 119 C800 112 900 98 1000 113 L1000 138 C800 124 755 145 640 140 C390 132 330 36 0 40 Z"/>
+        <path class="brand-ribbon__pink" d="M0 6 C300 12 425 135 660 130 C820 127 900 137 1000 132 L1000 158 C785 157 745 148 650 147 C398 140 326 51 0 47 Z"/>
+      </svg>
   <div class="wrap">
     <div class="foot__cols">
       <div>
         <h4>Kontakt</h4>
         <div class="foot__list">
-          <span style="color:#fff;font-weight:600">Marzena Tarczyńska</span>
+          <span style="color:var(--pink-400);font-weight:600">Marzena Tarczyńska</span>
           <span style="font-size:14px">Fizjoterapeuta</span>
           <a href="tel:+48691807853">691 807 853</a>
           <a href="mailto:marzenatarczynska@wp.pl">marzenatarczynska@wp.pl</a>
@@ -1290,7 +1341,7 @@ body.is-locked { overflow: hidden; }
       </div>
     </div>
     <div class="foot__bar">
-      <span>© <span id="year">2026</span> FizjoMarzena — Rehabilitacja dzieci i dorosłych. Fizjoterapia</span>
+      <span>© <span id="year">2026</span> FizjoMarzena — Marzena Tarczyńska · Rehabilitacja dzieci i dorosłych z dojazdem</span>
       <span class="tbd">Nazwa firmy i NIP do uzupełnienia</span>
     </div>
   </div>
@@ -1388,6 +1439,19 @@ body.is-locked { overflow: hidden; }
       if (e.key === "ArrowRight") n = (i + 1) % tabs.length;
       if (e.key === "ArrowLeft") n = (i - 1 + tabs.length) % tabs.length;
       if (n !== null) { e.preventDefault(); selectTab(n); tabs[n].focus(); }
+    });
+  });
+
+  /* ---- skróty z wizytówki otwierają właściwą zakładkę ---- */
+  document.querySelectorAll("[data-service-tab]").forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      var tab = document.getElementById(link.getAttribute("data-service-tab"));
+      var index = tabs.indexOf(tab);
+      if (index < 0) return;
+      e.preventDefault();
+      selectTab(index);
+      tab.focus({ preventScroll: true });
+      document.getElementById("terapie").scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
     });
   });
 
