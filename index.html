@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Figtree:wght@400;500;600&family=Lobster&display=swap">
 <style>
 /* ============================================================
-   FIZJOTERAPIA MARZENA TARCZYŃSKA — makieta v9
+   FIZJOTERAPIA MARZENA TARCZYŃSKA — makieta v10
    Kolorystyka: niebieski hero, biel i jasny błękit sekcji, granatowe przyciski, róż z wizytówki
    ============================================================ */
 
@@ -694,7 +694,7 @@ body.is-locked { overflow: hidden; }
 
 /* Wariant 6: niebieski początek, jasna treść, granatowe CTA i róż z wizytówki. */
 :root { --pink-on-blue: #FFEFF7; }
-.hero, .drawer { background: #174665; }
+.hero, .drawer { background: #1A587B; }
 .hero__glow, .b2b__in::after { display: none; }
 .hero__lead, .hero__towns, .hero__identity > p:last-child,
 .sec--navy p, .sec--navy li, .sec--navy .lead, .sec--navy .eyebrow,
@@ -796,6 +796,11 @@ body.is-locked { overflow: hidden; }
   margin: 0 0 14px;
 }
 
+
+.coverage { padding: 24px 0; border-top: 1px solid #BED2E2; }
+.coverage p { font-size: 13px; line-height: 1.85; color: var(--navy-800); }
+.coverage .coverage__note { margin-top: 12px; }
+.hours__row { flex-wrap: wrap; gap: 4px 16px; }
 </style>
 </head>
 <body>
@@ -803,11 +808,11 @@ body.is-locked { overflow: hidden; }
 <div class="progress" id="progress"></div>
 
 <details class="memo" id="memo" open>
-  <summary><span>i</span>Makieta poglądowa — wersja 9 (FizjoMarzena i wstęga według wizytówki)</summary>
+  <summary><span>i</span>Makieta poglądowa — wersja 10 (aktualna oferta, cennik i godziny wizyt)</summary>
   <div class="memo__in">
     To nie jest gotowa strona. Teksty, kolejność sekcji, kolory i zdjęcia można jeszcze zmienić.
     <div class="memo__row">
-      <span><i class="sw sw--tbd"></i> <b>podświetlone</b> = dane do potwierdzenia (ceny, godziny w tygodniu)</span>
+      <span><i class="sw sw--tbd"></i> <b>podświetlone</b> = dane do potwierdzenia (m.in. numer PWZFz i forma płatności)</span>
       <span><i class="sw sw--ph"></i> <b>zakreskowane</b> = miejsce na zdjęcie</span>
     </div>
   </div>
@@ -872,9 +877,9 @@ body.is-locked { overflow: hidden; }
     <a href="#kontakt">Kontakt</a>
   </nav>
   <div class="drawer__foot">
-    Wizyty domowe<br>
-    sobota 8:00–14:00<br>
-    Wizyty w gabinecie — <span class="tbd">godziny do potwierdzenia</span>
+    <b>Wizyty domowe</b><br>sobota 8:00–14:00<br><br>
+    <b>Wizyty w gabinecie</b><br>sobota 8:00–14:00<br>dni robocze 17:00–19:00<br><br>
+    Wizyty proszę umawiać na telefon.
   </div>
 </div>
 
@@ -889,7 +894,7 @@ body.is-locked { overflow: hidden; }
         <p>Rehabilitacja dzieci i dorosłych z dojazdem</p>
       </div>
       <h1>Fizjoterapia i masaż <mark>u Ciebie w domu</mark> — Ogrodzieniec i okolice do 30 km</h1>
-      <p class="hero__lead">Dyplomowany terapeuta metody FITS. Wierzę, że to, co robię, pomoże innym. Przyjeżdżam z własnym stołem, wiedzą i doświadczeniem — Ty przygotowujesz tylko dwa metry wolnej podłogi. Wizyty także w gabinecie.</p>
+      <p class="hero__lead">Dyplomowany terapeuta metody FITS. Wierzę, że to, co robię, pomoże innym. Przyjeżdżam z własnym stołem, wiedzą, doświadczeniem i pasją do pomagania — Ty przygotowujesz około 2 × 2 m wolnej podłogi. Wizyty także w gabinecie.</p>
       <div class="hero__cta">
         <a class="btn btn--primary" href="tel:+48691807853">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -902,6 +907,8 @@ body.is-locked { overflow: hidden; }
       </div>
       <div class="hero__chips">
         <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Terapia skolioz metodą FITS</span>
+        <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Rehabilitacja metodą PNF</span>
+        <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Pinoterapia przeciwbólowa</span>
         <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Dzieci i dorośli</span>
         <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Także wizyty w gabinecie</span>
       </div>
@@ -911,13 +918,13 @@ body.is-locked { overflow: hidden; }
         <a class="hero__service" href="#terapie" data-service-tab="t1">Terapia bólów kręgosłupa</a>
         <a class="hero__service" href="#terapie" data-service-tab="t3">Masaż leczniczy i Taping</a>
       </nav>
-      <p class="hero__towns">Zawiercie · Łazy · Niegowonice · Chechło · Kwaśniów · Pilica i 150 innych miejscowości — <a href="#dojazd">sprawdź, czy dojeżdżam do Ciebie</a></p>
+      <p class="hero__towns">Zawiercie · Łazy · Niegowonice · Chechło · Kwaśniów · Pilica i okolice — <a href="#dojazd">sprawdź, czy dojeżdżam do Ciebie</a></p>
     </div>
     <div class="hero__media">
       <div class="ph ph--portrait"><span>Zdjęcie: Marzena Tarczyńska — portret po pas, światło dzienne z okna, tło naturalne</span></div>
       <svg class="brand-ribbon" viewBox="0 0 1000 360" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-        <path class="brand-ribbon__pink" d="M0 0 C225 20 410 70 500 180 C350 80 155 75 0 60 Z"/>
-        <path class="brand-ribbon__pink" d="M0 0 C225 20 410 70 500 180 C350 80 155 75 0 60 Z" transform="rotate(180 500 180)"/>
+        <path class="brand-ribbon__pink" d="M0 0 C225 20 410 70 500 180 C350 105 155 120 0 105 Z"/>
+        <path class="brand-ribbon__pink" d="M0 0 C225 20 410 70 500 180 C350 105 155 120 0 105 Z" transform="rotate(180 500 180)"/>
       </svg>
     </div>
   </div>
@@ -935,7 +942,7 @@ body.is-locked { overflow: hidden; }
       <div class="fact"><b>30 km</b><span>zasięg dojazdu od Ogrodzieńca — lub wizyta w gabinecie</span></div>
       <div class="fact"><b>12</b><span>rodzajów terapii i masażu</span></div>
       <div class="fact"><b>Własny sprzęt</b><span>stół, piny, masażer, narzędzia i urządzenia do terapii oraz profesjonalnie wyposażony gabinet</span></div>
-      <div class="fact"><b>od 2017 r.</b><span>doświadczenia w fizjoterapii i rehabilitacji — szpitale, ośrodki, gabinety prywatne</span></div>
+      <div class="fact"><b>od 2017 r.</b><span>doświadczenie w fizjoterapii i rehabilitacji — szpitale, ośrodki, gabinety prywatne</span></div>
     </div>
   </div>
 </section>
@@ -951,7 +958,7 @@ body.is-locked { overflow: hidden; }
     <div class="pains rv">
       <div class="pain">
         <span class="pain__ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M5 8h14M6 15h12"/></svg></span>
-        <div><b>Ból dolnego odcinka kręgosłupa</b><p>Po siedzącej pracy albo za kierownicą, nasila się wieczorem.</p></div>
+        <div><b>Ból dolnego odcinka kręgosłupa</b><p>Po siedzącej lub ciężkiej pracy albo za kierownicą ból nasila się wieczorem. Może utrzymywać się również rano, po wstaniu z łóżka.</p></div>
       </div>
       <div class="pain">
         <span class="pain__ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M7 12h10M9 17h6"/></svg></span>
@@ -971,7 +978,7 @@ body.is-locked { overflow: hidden; }
       </div>
       <div class="pain">
         <span class="pain__ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.4-7 10-7 10z"/></svg></span>
-        <div><b>Ciężkie, opuchnięte nogi i uczucie zastoju</b><p>Szczególnie po pracy stojącej.</p></div>
+        <div><b>Ciężkie, opuchnięte nogi i kostki, uczucie zastoju</b><p>Szczególnie po pracy stojącej lub długotrwałym poruszaniu się, np. po domu.</p></div>
       </div>
       <div class="pain">
         <span class="pain__ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4a8 8 0 1 0 8 8M12 8v4l3 2"/></svg></span>
@@ -999,7 +1006,7 @@ body.is-locked { overflow: hidden; }
         <button class="tab" role="tab" id="t1" aria-controls="p1" aria-selected="true">Kręgosłup i terapia bólu</button>
         <button class="tab" role="tab" id="t2" aria-controls="p2" aria-selected="false">Wady postawy i skoliozy</button>
         <button class="tab" role="tab" id="t3" aria-controls="p3" aria-selected="false">Masaż leczniczy i Taping</button>
-        <button class="tab" role="tab" id="t4" aria-controls="p4" aria-selected="false">Sylwetka i uroda</button>
+        <button class="tab" role="tab" id="t4" aria-controls="p4" aria-selected="false">Rehabilitacja medyczna</button>
       </div>
 
       <div class="panel is-active" role="tabpanel" id="p1" aria-labelledby="t1">
@@ -1016,8 +1023,8 @@ body.is-locked { overflow: hidden; }
             </div>
             <p class="small" style="font-size:16.5px;color:var(--ink)">Zaczynam od rozmowy i sprawdzenia ruchomości, dopiero potem dobieram technikę. Na koniec dostajesz 2–3 ćwiczenia do wykonywania między wizytami — bez tego efekt utrzymuje się krócej.</p>
             <div class="meta-row">
-              <span>Czas wizyty: 45–60 min</span>
-              <span>Cena od <strong class="tbd">— zł</strong></span>
+              <span>Czas wizyty: 45 min</span>
+              <span>Cena wizyty: <strong>160 zł</strong></span>
             </div>
             <a class="btn btn--outline" href="#kontakt">Umów wizytę</a>
           </div>
@@ -1040,7 +1047,7 @@ body.is-locked { overflow: hidden; }
             <p class="small" style="font-size:16.5px;color:var(--ink)">Pracuję metodą <b>FITS</b> — Funkcjonalną Indywidualną Terapią Skolioz, w której jestem dyplomowanym terapeutą. Zabieg prowadzę w domu, w warunkach, które dziecko zna, bez stresu poczekalni. Rodzic jest przy wizycie i uczy się ćwiczeń razem z dzieckiem, żeby dało się je powtarzać między spotkaniami.</p>
             <div class="meta-row">
               <span>Czas wizyty: 45 min</span>
-              <span>Cena od <strong class="tbd">— zł</strong></span>
+              <span>Cena wizyty: <strong>160 zł</strong></span>
             </div>
             <a class="btn btn--outline" href="#dzieci">Więcej o pracy z dziećmi</a>
           </div>
@@ -1062,8 +1069,8 @@ body.is-locked { overflow: hidden; }
             </div>
             <p class="small" style="font-size:16.5px;color:var(--ink)">Od masażu punktowego pleców i karku po masaż całego ciała. Przywożę świeże ręczniki, prześcieradła jednorazowe i olejki — nie musisz niczego przygotowywać poza wolnym miejscem.</p>
             <div class="meta-row">
-              <span>Czas wizyty: 30–90 min</span>
-              <span>Cena od <strong class="tbd">— zł</strong></span>
+              <span>Czas wizyty: 45 min</span>
+              <span>Cena wizyty: <strong>160 zł</strong></span>
             </div>
             <a class="btn btn--outline" href="#cennik">Zobacz cennik</a>
           </div>
@@ -1072,19 +1079,14 @@ body.is-locked { overflow: hidden; }
 
       <div class="panel" role="tabpanel" id="p4" aria-labelledby="t4" hidden>
         <div class="panel__grid">
-          <div class="ph ph--card"><span>Zdjęcie: bańka chińska albo masaż twarzy w trakcie zabiegu</span></div>
+          <div class="ph ph--card"><span>Zdjęcie: indywidualna rehabilitacja w gabinecie</span></div>
           <div>
-            <h3 class="h3">Modelowanie sylwetki i masaż twarzy</h3>
-            <div class="tags">
-              <span class="tag">Masaż antycellulitowy</span>
-              <span class="tag">Masaż odchudzający</span>
-              <span class="tag">Modelowanie sylwetki</span>
-              <span class="tag">Masaż kosmetyczny twarzy</span>
-            </div>
-            <p class="small" style="font-size:16.5px;color:var(--ink)">Uczciwie: przy cellulicie i modelowaniu sylwetki efekt daje seria 8–10 zabiegów wykonywanych regularnie, wsparta dietą i ruchem — nie jedna wizyta. Powiem wprost, czego można się spodziewać.</p>
+            <h3 class="h3">Rehabilitacja medyczna</h3>
+            <div class="tags"><span class="tag">Rehabilitacja metodą PNF</span><span class="tag">Pinoterapia przeciwbólowa</span><span class="tag">Ćwiczenia indywidualne</span></div>
+            <p class="small" style="font-size:16.5px;color:var(--ink)">Rehabilitacja dzieci i dorosłych w gabinecie lub w domu pacjenta. Zakres wizyty ustalam indywidualnie po rozmowie i ocenie potrzeb pacjenta. W pracy wykorzystuję m.in. metodę PNF i pinoterapię.</p>
             <div class="meta-row">
-              <span>Czas wizyty: 30–60 min</span>
-              <span>Cena od <strong class="tbd">— zł</strong></span>
+              <span>Czas wizyty: 45 min</span>
+              <span>Cena wizyty: <strong>160 zł</strong></span>
             </div>
             <a class="btn btn--outline" href="#cennik">Zobacz cennik</a>
           </div>
@@ -1106,7 +1108,7 @@ body.is-locked { overflow: hidden; }
           <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b style="color:var(--navy-900)">Dziecko jest w znanym otoczeniu</b> — bez poczekalni i bez stresu, a przy młodszych dzieciach to często warunek, żeby wizyta w ogóle się udała.</span></li>
           <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b style="color:var(--navy-900)">Rodzic uczy się ćwiczeń razem z dzieckiem</b> — pokazuję, na co patrzeć i jakie błędy poprawiać, żeby praca między wizytami miała sens.</span></li>
           <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b style="color:var(--navy-900)">Widzę warunki, w których dziecko żyje</b> — biurko, krzesło, plecak, łóżko. Połowa problemów z postawą siedzi właśnie tam.</span></li>
-          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b style="color:var(--navy-900)">Terminy po szkole</b> — wizyty popołudniowe i sobotnie przedpołudniowe.</span></li>
+          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b style="color:var(--navy-900)">Terminy wizyt</b> — dojazd w soboty 8:00–14:00; gabinet w soboty 8:00–14:00 i dni robocze 17:00–19:00. Proszę wcześniej zadzwonić.</span></li>
         </ul>
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
           <a class="btn btn--onnavy" href="tel:+48691807853">Zadzwoń i opisz sytuację</a>
@@ -1142,12 +1144,12 @@ body.is-locked { overflow: hidden; }
       <div class="step">
         <div class="step__n">3</div>
         <h3>Wywiad, terapia, ćwiczenia</h3>
-        <p>Zaczynamy od rozmowy i oceny ruchomości. Zabieg trwa 30–90 minut. Na koniec pokazuję ćwiczenia do domu.</p>
+        <p>Zaczynamy od rozmowy i oceny ruchomości. Wizyta trwa 45 minut. Na koniec pokazuję ćwiczenia do domu.</p>
       </div>
       <div class="step">
         <div class="step__n">4</div>
         <h3>Płacisz na miejscu</h3>
-        <p><span class="tbd">Gotówka lub BLIK</span>. Faktura dla firm na życzenie. Dojazd do <span class="tbd">— km</span> w cenie zabiegu.</p>
+        <p><span class="tbd">Gotówka lub BLIK</span>. Faktura dla firm na życzenie. Dojazd do 10 km w cenie zabiegu. Powyżej 10 km do 20 km — dopłata 10 zł; powyżej 20 km — 20 zł.</p>
       </div>
     </div>
     <div class="rv" style="margin-top:32px">
@@ -1163,11 +1165,11 @@ body.is-locked { overflow: hidden; }
       <div class="rv">
         <p class="eyebrow">Obszar dojazdu</p>
         <h2 class="h2">Dojeżdżam w promieniu 30 km od Ogrodzieńca</h2>
-        <p class="lead">W promieniu 30 km jest około 150 miejscowości. Poniżej te, do których jeżdżę najczęściej — jeśli Twojej nie ma na liście, zadzwoń, prawdopodobnie przyjadę.</p>
+        <p class="lead">Poniżej wybrane miejscowości objęte dojazdem. Pełny wykaz znajdziesz na dole strony. Przy umawianiu wizyty potwierdzimy adres i koszt dojazdu.</p>
         <div class="pills">
-          <a href="#dojazd">Ogrodzieniec</a><a href="#dojazd">Zawiercie</a><a href="#dojazd">Łazy</a><a href="#dojazd">Niegowonice</a><a href="#dojazd">Chechło</a><a href="#dojazd">Kwaśniów</a><a href="#dojazd">Pilica</a><a href="#dojazd">Klucze</a><a href="#dojazd">Olkusz</a><a href="#dojazd">Bolesław</a><a href="#dojazd">Bukowno</a><a href="#dojazd">Sławków</a><a href="#dojazd">Siewierz</a><a href="#dojazd">Poręba</a><a href="#dojazd">Dąbrowa Górnicza</a><a href="#dojazd">Myszków</a><a href="#dojazd">Włodowice</a><a href="#dojazd">Kroczyce</a><a href="#dojazd">Wolbrom</a>
-        </div>
-        <p class="small">Dojazd do <span class="tbd">— km</span> w cenie zabiegu. Powyżej — dopłata <span class="tbd">— zł</span>. Możesz też przyjechać do gabinetu — ul. Mickiewicza 8.</p>
+          <a href="#dojazd">Ogrodzieniec</a><a href="#dojazd">Zawiercie</a><a href="#dojazd">Łazy</a><a href="#dojazd">Niegowonice</a><a href="#dojazd">Chechło</a><a href="#dojazd">Kwaśniów</a><a href="#dojazd">Pilica</a><a href="#dojazd">Klucze</a><a href="#dojazd">Chruszczobród</a><a href="#dojazd">Rokitno Szlacheckie</a><a href="#dojazd">Grabowa</a><a href="#dojazd">Bydlin</a><a href="#dojazd">Chlina</a><a href="#dojazd">Poręba</a><a href="#dojazd">Sławniów</a><a href="#dojazd">Myszków</a><a href="#dojazd">Włodowice</a><a href="#dojazd">Kroczyce</a><a href="#dojazd">Wolbrom</a>
+        <a href="#dojazd">Wierbka</a><a href="#dojazd">Szyce</a><a href="#dojazd">Jeżówka</a><a href="#dojazd">Kocikowa</a><a href="#dojazd">Mokrus</a></div>
+        <p class="small">Dojazd do 10 km w cenie zabiegu. Powyżej 10 km do 20 km — dopłata 10 zł. Powyżej 20 km — dopłata 20 zł. Możesz też przyjechać do gabinetu — ul. Mickiewicza 8.</p>
       </div>
       <div class="rv">
         <div class="ph ph--map"><span>Mapa: okrąg 30 km wokół Ogrodzieńca. Statyczny obrazek — kliknięcie otwiera Mapy Google</span></div>
@@ -1268,21 +1270,10 @@ body.is-locked { overflow: hidden; }
 <!-- ============ CENNIK ============ -->
 <section class="sec sec--tint" id="cennik">
   <div class="wrap">
-    <div class="head-block rv">
-      <p class="eyebrow">Cennik</p>
-      <h2 class="h2">Ile to kosztuje</h2>
-      <p class="lead">Ceny są na stronie od razu widoczne — to pierwsza rzecz, której szuka pacjent. Bez ukrytych opłat i bez „ceny do ustalenia”.</p>
-    </div>
+    <div class="head-block rv"><p class="eyebrow">Cennik</p><h2 class="h2">Wizyta fizjoterapeutyczna</h2><p class="lead">Jedna cena wizyty dla dorosłych i dzieci.</p></div>
     <div class="price rv">
-      <div class="price__row"><span class="price__name">Terapia bólów kręgosłupa</span><span class="price__time">45 min</span><span class="price__val tbd">— zł</span></div>
-      <div class="price__row"><span class="price__name">Korekcja wad postawy — dziecko</span><span class="price__time">45 min</span><span class="price__val tbd">— zł</span></div>
-      <div class="price__row"><span class="price__name">Masaż leczniczy — plecy i kark</span><span class="price__time">45 min</span><span class="price__val tbd">— zł</span></div>
-      <div class="price__row"><span class="price__name">Masaż leczniczy — całe ciało</span><span class="price__time">60 min</span><span class="price__val tbd">— zł</span></div>
-      <div class="price__row"><span class="price__name">Masaż relaksacyjny</span><span class="price__time">60 min</span><span class="price__val tbd">— zł</span></div>
-      <div class="price__row"><span class="price__name">Masaż sportowy</span><span class="price__time">60 min</span><span class="price__val tbd">— zł</span></div>
-      <div class="price__row"><span class="price__name">Masaż antycellulitowy</span><span class="price__time">45 min</span><span class="price__val tbd">— zł</span></div>
-      <div class="price__row"><span class="price__name">Bańka chińska</span><span class="price__time">30 min</span><span class="price__val tbd">— zł</span></div>
-      <p class="small" style="margin-top:20px">Dojazd do <span class="tbd">— km</span> w cenie. Pakiet 5 wizyt <span class="tbd">— % taniej</span>. Odwołanie wizyty najpóźniej <span class="tbd">— godzin</span> przed terminem.</p>
+      <div class="price__row"><span class="price__name">Wizyta fizjoterapeutyczna — dorośli i dzieci</span><span class="price__time">45 min</span><span class="price__val">160 zł</span></div>
+      <p class="small" style="margin-top:20px">Dojazd do 10 km w cenie. Powyżej 10 km do 20 km — dopłata 10 zł; powyżej 20 km — dopłata 20 zł. Nie praktykuję wizyt i cen w pakietach. Odwołanie wizyty najpóźniej w dniu wizyty, 6 godzin przed terminem.</p>
     </div>
   </div>
 </section>
@@ -1305,32 +1296,20 @@ body.is-locked { overflow: hidden; }
       </details>
       <details>
         <summary>Czy przyjmuje Pani też w gabinecie?</summary>
-        <p>Tak. Gabinet jest w Ogrodzieńcu — ul. Mickiewicza 8, <span class="tbd">godziny do potwierdzenia</span> — i jest profesjonalnie wyposażony. Wizyty domowe realizuję w soboty od 8:00 do 14:00; jeśli wolisz przyjechać do mnie albo potrzebujesz terminu w tygodniu, zadzwoń i ustalimy.</p>
+        <p>Tak. Gabinet znajduje się w Ogrodzieńcu przy ul. Mickiewicza 8. Przyjmuję w soboty 8:00–14:00 oraz w dni robocze 17:00–19:00. Wizyty domowe realizuję w soboty 8:00–14:00. Wizyty proszę umawiać na telefon.</p>
       </details>
       <details>
         <summary>Czy dojazd jest dodatkowo płatny?</summary>
-        <p>Dojazd w promieniu <span class="tbd">— km</span> od Ogrodzieńca jest w cenie zabiegu. Dalej doliczam <span class="tbd">— zł</span>. Przy umawianiu podaję pełną kwotę, więc nie ma niespodzianek.</p>
+        <p>Dojazd do 10 km w cenie zabiegu. Powyżej 10 km do 20 km — dopłata 10 zł. Powyżej 20 km — dopłata 20 zł. Przy umawianiu wizyty potwierdzam pełną kwotę.</p>
       </details>
       <details>
         <summary>Ile wizyt potrzeba, żeby coś się zmieniło?</summary>
-        <p>Zależy od problemu. Przy ostrym bólu zwykle widać różnicę po 2–3 wizytach. Przy wadach postawy, skoliozach i cellulicie mówimy o serii i o regularnych ćwiczeniach między spotkaniami. Po pierwszej wizycie powiem wprost, czego można się spodziewać.</p>
+        <p>Zależy od problemu. Przy ostrym bólu zwykle widać różnicę po 2–3 wizytach. Przy wadach postawy i skoliozach mówimy o serii i o regularnych ćwiczeniach między spotkaniami. Po pierwszej wizycie powiem wprost, czego można się spodziewać.</p>
       </details>
       <details>
         <summary>Kiedy zabiegu nie wykonam?</summary>
         <p>Przy gorączce i infekcji, świeżych urazach bez konsultacji lekarskiej, zmianach skórnych w miejscu zabiegu, zakrzepicy oraz w niektórych chorobach przewlekłych i w ciąży — wtedy potrzebna jest zgoda lekarza prowadzącego. O przeciwwskazaniach pytam zawsze na początku wizyty.</p>
       </details>
-    </div>
-  </div>
-</section>
-
-<!-- ============ B2B ============ -->
-<section class="sec b2b" id="firmy">
-  <div class="wrap">
-    <div class="b2b__in rv">
-      <p class="eyebrow">Współpraca</p>
-      <h2 class="h2">Dla firm, hoteli i ośrodków</h2>
-      <p>Masaże biurowe na krzesełku w siedzibie firmy, obsługa gości hoteli i agroturystyk na Jurze, współpraca z klubami fitness, siłowniami, ośrodkami SPA i domami seniora. Rozliczenie na fakturę, stała stawka za dzień lub za zabieg.</p>
-      <a class="btn btn--onnavy" href="#kontakt">Poproś o ofertę dla firmy</a>
     </div>
   </div>
 </section>
@@ -1349,10 +1328,11 @@ body.is-locked { overflow: hidden; }
         </a>
         <div class="hours">
           <div class="hours__row"><span>Wizyty domowe — sobota</span><b>8:00–14:00</b></div>
-          <div class="hours__row"><span>Wizyty w gabinecie</span><b class="tbd">godziny do potwierdzenia</b></div>
-          <div class="hours__row off"><span>Pozostałe dni</span><b class="tbd">do potwierdzenia</b></div>
+          <div class="hours__row"><span>Wizyty w gabinecie — sobota</span><b>8:00–14:00</b></div>
+          <div class="hours__row"><span>Wizyty w gabinecie — dni robocze</span><b>17:00–19:00</b></div>
         </div>
-        <p class="small" style="margin:-6px 0 18px">Gabinet: Ogrodzieniec, ul. Mickiewicza 8.</p>
+        <p class="small" style="margin:0 0 12px">Wizyty proszę umawiać na telefon.</p>
+        <p class="small" style="margin:0 0 18px">Gabinet: Ogrodzieniec, ul. Mickiewicza 8.</p>
         <div class="ways">
           <a class="btn btn--outline" href="https://wa.me/48691807853" target="_blank" rel="noopener">
             <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="color:#25D366"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.02.24-3.46-.72-2.94-1.16-4.75-4.2-4.9-4.4-.14-.2-1.13-1.5-1.13-2.87 0-1.36.71-2.03.97-2.31.25-.29.55-.36.73-.36.19 0 .37 0 .53.01.17.01.4-.06.62.48.24.53.8 1.94.87 2.08.07.15.12.32.02.51-.1.2-.15.32-.29.5-.15.17-.31.38-.44.51-.15.14-.3.3-.13.59.17.29.75 1.24 1.61 2.01 1.1.98 2.03 1.29 2.32 1.43.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.39-.24.65-.14.27.1 1.69.8 1.98.94.29.15.48.22.55.34.07.13.07.75-.17 1.43z"/></svg>
@@ -1379,12 +1359,17 @@ body.is-locked { overflow: hidden; }
         </div>
         <div class="field">
           <label for="f-typ">Czego dotyczy wizyta</label>
-          <select id="f-typ" name="typ" disabled>
+          <select id="f-typ" name="typ">
             <option>Terapia bólów kręgosłupa</option>
-            <option>Korekcja wad postawy — dziecko</option>
-            <option>Masaż leczniczy lub relaksacyjny</option>
-            <option>Sylwetka i uroda</option>
-            <option>Nie wiem, poproszę o poradę</option>
+            <option>Ból kostki i stawu skokowego</option>
+            <option>Leczenie bólu łokcia i nadgarstka</option>
+            <option>Terapia bólu uda</option>
+            <option>Terapia bólu barku</option>
+            <option>Rehabilitacja bólu ręki</option>
+            <option>Rehabilitacja bólu nogi</option>
+            <option>Wada postawy</option>
+            <option>Masaż leczniczy</option>
+            <option>Inne</option>
           </select>
         </div>
         <div class="field">
@@ -1406,8 +1391,8 @@ body.is-locked { overflow: hidden; }
 <!-- ============ STOPKA ============ -->
 <footer class="foot">
   <svg class="brand-ribbon" viewBox="0 0 1000 360" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-        <path class="brand-ribbon__pink" d="M0 0 C225 20 410 70 500 180 C350 80 155 75 0 60 Z"/>
-        <path class="brand-ribbon__pink" d="M0 0 C225 20 410 70 500 180 C350 80 155 75 0 60 Z" transform="rotate(180 500 180)"/>
+        <path class="brand-ribbon__pink" d="M0 0 C225 20 410 70 500 180 C350 105 155 120 0 105 Z"/>
+        <path class="brand-ribbon__pink" d="M0 0 C225 20 410 70 500 180 C350 105 155 120 0 105 Z" transform="rotate(180 500 180)"/>
       </svg>
   <div class="wrap">
     <div class="foot__cols">
@@ -1417,17 +1402,17 @@ body.is-locked { overflow: hidden; }
           <span style="color:var(--pink-700);font-weight:600">Marzena Tarczyńska</span>
           <span style="font-size:14px">Fizjoterapeuta</span>
           <a href="tel:+48691807853">691 807 853</a>
-          <a href="mailto:marzenatarczynska@wp.pl">marzenatarczynska@wp.pl</a>
+          <a href="mailto:marzenaojzanowska@gmail.com">marzenaojzanowska@gmail.com</a>
           <a href="https://wa.me/48691807853" target="_blank" rel="noopener">WhatsApp</a>
           <a href="https://www.facebook.com/FizjoMarzena/" target="_blank" rel="noopener">Facebook — FizjoMarzena</a>
-          <span>Wizyty domowe: sobota 8:00–14:00</span>
+          <span>Wizyty domowe: sobota 8:00–14:00</span><span>Gabinet: sobota 8:00–14:00; dni robocze 17:00–19:00</span><span>Wizyty proszę umawiać na telefon.</span>
         </div>
       </div>
       <div>
         <h4>Gdzie dojeżdżam</h4>
         <div class="foot__towns">
-          <a href="#dojazd">Ogrodzieniec</a><a href="#dojazd">Zawiercie</a><a href="#dojazd">Łazy</a><a href="#dojazd">Niegowonice</a><a href="#dojazd">Chechło</a><a href="#dojazd">Kwaśniów</a><a href="#dojazd">Pilica</a><a href="#dojazd">Klucze</a><a href="#dojazd">Olkusz</a><a href="#dojazd">Bolesław</a><a href="#dojazd">Bukowno</a><a href="#dojazd">Sławków</a><a href="#dojazd">Siewierz</a><a href="#dojazd">Poręba</a><a href="#dojazd">Dąbrowa Górnicza</a><a href="#dojazd">Myszków</a><a href="#dojazd">Włodowice</a><a href="#dojazd">Kroczyce</a><a href="#dojazd">Wolbrom</a>
-        </div>
+          <a href="#dojazd">Ogrodzieniec</a><a href="#dojazd">Zawiercie</a><a href="#dojazd">Łazy</a><a href="#dojazd">Niegowonice</a><a href="#dojazd">Chechło</a><a href="#dojazd">Kwaśniów</a><a href="#dojazd">Pilica</a><a href="#dojazd">Klucze</a><a href="#dojazd">Chruszczobród</a><a href="#dojazd">Rokitno Szlacheckie</a><a href="#dojazd">Grabowa</a><a href="#dojazd">Bydlin</a><a href="#dojazd">Chlina</a><a href="#dojazd">Poręba</a><a href="#dojazd">Sławniów</a><a href="#dojazd">Myszków</a><a href="#dojazd">Włodowice</a><a href="#dojazd">Kroczyce</a><a href="#dojazd">Wolbrom</a>
+        <a href="#dojazd">Wierbka</a><a href="#dojazd">Szyce</a><a href="#dojazd">Jeżówka</a><a href="#dojazd">Kocikowa</a><a href="#dojazd">Mokrus</a></div>
       </div>
       <div>
         <h4>Strona</h4>
@@ -1442,9 +1427,14 @@ body.is-locked { overflow: hidden; }
         </div>
       </div>
     </div>
+    <div class="coverage" id="miejscowosci">
+      <h4>Wizyty z dojazdem do domu — obszar działania</h4>
+      <p>Zawiercie, Ogrodzieniec, Fugasówka, Podzamcze, Poręba, Siewierz, Myszków, Leśniaki, Czekanka, Gołuchowice, Chruszczobród, Wysoka, Wiesiółka, Ciągowice, Turza, Kuźnica Masłońska, Trzebyczka, Łazy, Rokitno Szlacheckie, Mitręga, Hutki-Kanki, Niegowonice, Niegowoniczki, Grabowa, Sławków, Krzykawa, Krzykawka, Ujków Nowy, Ujków Stary, Laski, Kolonia, Hutki, Międzygórze, Podlipie, Krążek, Bukowno, Bolesław, Olkusz, Rabsztyn, Bogucin Mały, Bogucin Duży, Klucze, Jaroszowiec, Chechło, Rodaki, Ryczówek, Kwaśniów Dolny, Kwaśniów Górny, Hucisko, Żelazko, Ryczów, Golczowice, Cieślin, Kolbark, Bydlin, Krzywopłoty, Boża Wola, Załęże, Chrząstowice, Zarzecze, Kaliś, Łobzów, Lgota Wolbromska, Wolbrom, Gołaczewy, Chełm, Domaniewice, Dłużec, Zabagnie, Miechówka, Kąpiele Wielkie, Kąpiołki, Strzegowa, Smoleń, Złożeniec, Cisowa, Kocikowa, Biskupice, Pilica, Giebło, Kiełkowice, Mokrus, Gulzów, Siamoszyce, Szypowice, Piaseczno, Lgota Murowana, Przyłubsko, Sierbowice, Dzwono-Sierbowice, Dzwonowice, Dobra, Dobra-Kolonia, Sławniów, Wierbka, Kleszczowa, Udórz, Poręba Dzierżna, Chlina, Wola Libertowska, Łany Małe, Łany Wielkie, Otola, Żarnowiec, Kidów, Przychody, Szyce, Siadcza, Wierzbica, Dobraków, Podleśna, Solca, Jasieniec, Trzciniec, Ołdza, Wółka Ołudzka, Jeziorowice, Huta Szklana, Siedliszowice, Pradła, Siemięrzyce, Kroczyce, Kostkowice, Morsko, Zdów, Lgotka, Podlesice, Dzibice, Dobrogoszczyce, Bobolice, Mirów, Kotowice, Jaworznik, Góra Włodowska, Włodowice, Parkoszowice, Rudniki, Skałka, Rzędkowice, Kromołów, Bzów, Karlin, Blanowice, Borowe Pole, Kalinówka, Marciszów, Pomrożyce, Skarżyce, Łośnice, Żerkowice, Żabki, Warty, Jeżówka.</p>
+      <p class="coverage__note">Możliwość dojazdu pod konkretny adres i jego koszt potwierdzamy telefonicznie przy umawianiu wizyty.</p>
+    </div>
     <div class="foot__bar">
       <span>© <span id="year">2026</span> FizjoMarzena — Marzena Tarczyńska · Rehabilitacja dzieci i dorosłych z dojazdem</span>
-      <span class="tbd">Nazwa firmy i NIP do uzupełnienia</span>
+      <span>FizjoMarzena - Marzena Tarczyńska · NIP: <span class="tbd">do uzupełnienia</span></span>
     </div>
   </div>
 </footer>
