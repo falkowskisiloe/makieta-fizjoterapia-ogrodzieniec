@@ -801,6 +801,33 @@ body.is-locked { overflow: hidden; }
 .coverage p { font-size: 13px; line-height: 1.85; color: var(--navy-800); }
 .coverage .coverage__note { margin-top: 12px; }
 .hours__row { flex-wrap: wrap; gap: 4px 16px; }
+
+/* Korekty klienta: portret, galeria i układ na telefonie. */
+.hero__portrait { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 25%; }
+.town-break { flex-basis: 100%; height: 0; }
+.gallery__heading { color: var(--navy-900); font-family: var(--f-head); font-size: 24px; margin: 32px 0 10px; }
+.gallery__tile { width: 100%; cursor: zoom-in; font: inherit; }
+.gallery__tile small { display: block; margin-top: 10px; font-size: 13px; font-weight: 400; }
+.gallery__tile:hover { border-color: var(--pink-700); }
+.gallery__tile:focus-visible { outline: 3px solid var(--pink-700); outline-offset: 4px; }
+.lightbox { width: min(900px, calc(100% - 32px)); max-height: 90dvh; padding: 22px; border: 0; border-radius: 18px; color: var(--navy-900); background: white; }
+.lightbox::backdrop { background: rgba(14,43,68,.82); }
+.lightbox__bar { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 20px; }
+.lightbox__bar h2 { font-size: 20px; }
+.lightbox__bar .btn { padding: 12px 20px; }
+.lightbox img { display: block; max-width: 100%; max-height: 70dvh; object-fit: contain; margin: auto; }
+.lightbox .ph { min-height: 300px; aspect-ratio: 4 / 3; }
+body:has(.lightbox[open]) { overflow: hidden; }
+@media (max-width: 559px) {
+  .price { width: fit-content; max-width: 100%; }
+  .price__row { display: grid; grid-template-columns: 1fr auto; gap: 8px 20px; }
+  .price__name { grid-column: 1 / -1; }
+  .price__name > span { display: block; }
+  .price__audience { text-align: right; }
+  .price__val { margin-left: 0; justify-self: end; }
+  .lightbox__bar { align-items: flex-start; }
+}
+
 </style>
 </head>
 <body>
@@ -894,7 +921,7 @@ body.is-locked { overflow: hidden; }
         <p>Rehabilitacja dzieci i dorosłych z dojazdem</p>
       </div>
       <h1>Fizjoterapia i masaż <mark>u Ciebie w domu</mark> — Ogrodzieniec i okolice do 30 km</h1>
-      <p class="hero__lead">Dyplomowany terapeuta metody FITS. Wierzę, że to, co robię, pomoże innym. Przyjeżdżam z własnym stołem, wiedzą, doświadczeniem i pasją do pomagania — Ty przygotowujesz około 2 × 2 m wolnej podłogi. Wizyty także w gabinecie.</p>
+      <p class="hero__lead">Dyplomowany terapeuta metod <strong>FITS</strong> oraz <strong>PNF.</strong> Wierzę, że to, co robię, pomoże innym. Przyjeżdżam z własnym stołem, wiedzą, doświadczeniem i pasją — Ty przygotowujesz około 2 × 2 m wolnej podłogi. Wizyty także w gabinecie.</p>
       <div class="hero__cta">
         <a class="btn btn--primary" href="tel:+48691807853">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -921,10 +948,10 @@ body.is-locked { overflow: hidden; }
       <p class="hero__towns">Zawiercie · Łazy · Niegowonice · Chechło · Kwaśniów · Pilica i okolice — <a href="#dojazd">sprawdź, czy dojeżdżam do Ciebie</a></p>
     </div>
     <div class="hero__media">
-      <div class="ph ph--portrait"><span>Zdjęcie: Marzena Tarczyńska — portret po pas, światło dzienne z okna, tło naturalne</span></div>
+      <img class="hero__portrait" src="assets/marzena-tarczynska.jpg" alt="Marzena Tarczyńska, fizjoterapeutka FizjoMarzena" width="508" height="823" fetchpriority="high">
       <svg class="brand-ribbon" viewBox="0 0 1000 360" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-        <path class="brand-ribbon__pink" d="M0 0 C225 20 410 70 500 180 C350 105 155 120 0 105 Z"/>
-        <path class="brand-ribbon__pink" d="M0 0 C225 20 410 70 500 180 C350 105 155 120 0 105 Z" transform="rotate(180 500 180)"/>
+        <path class="brand-ribbon__pink" d="M0 0 C220 20 405 75 500 180 C365 125 170 145 0 145 Z"/>
+        <path class="brand-ribbon__pink" d="M0 0 C220 20 405 75 500 180 C365 125 170 145 0 145 Z" transform="rotate(180 500 180)"/>
       </svg>
     </div>
   </div>
@@ -958,7 +985,11 @@ body.is-locked { overflow: hidden; }
     <div class="pains rv">
       <div class="pain">
         <span class="pain__ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M5 8h14M6 15h12"/></svg></span>
-        <div><b>Ból dolnego odcinka kręgosłupa</b><p>Po siedzącej lub ciężkiej pracy albo za kierownicą ból nasila się wieczorem. Może utrzymywać się również rano, po wstaniu z łóżka.</p></div>
+        <div><b>Ból dolnego odcinka kręgosłupa</b><p>Po siedzącej lub ciężkiej pracy albo za kierownicą ból nasila się wieczorem.</p></div>
+      </div>
+      <div class="pain">
+        <span class="pain__ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M5 8h14M6 15h12"/></svg></span>
+        <div><b>Poranny ból krzyża po wstaniu z łóżka</b><p>Od niewłaściwej pozycji podczas snu oraz złego materaca.</p></div>
       </div>
       <div class="pain">
         <span class="pain__ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M7 12h10M9 17h6"/></svg></span>
@@ -1139,7 +1170,7 @@ body.is-locked { overflow: hidden; }
       <div class="step">
         <div class="step__n">2</div>
         <h3>Przyjeżdżam z całym sprzętem</h3>
-        <p>Składany stół, świeże ręczniki, prześcieradła jednorazowe, olejki, bańki, aparat do fizykoterapii. Ty przygotowujesz około 2 × 2 m wolnej podłogi.</p>
+        <p>Składany stół, narzędzia i urządzenia do fizjoterapii i masażu. Ty przygotowujesz około 2 × 2 m wolnej podłogi.</p>
       </div>
       <div class="step">
         <div class="step__n">3</div>
@@ -1149,7 +1180,7 @@ body.is-locked { overflow: hidden; }
       <div class="step">
         <div class="step__n">4</div>
         <h3>Płacisz na miejscu</h3>
-        <p><span class="tbd">Gotówka lub BLIK</span>. Faktura dla firm na życzenie. Dojazd do 10 km w cenie zabiegu. Powyżej 10 km do 20 km — dopłata 10 zł; powyżej 20 km — 20 zł.</p>
+        <p>Gotówka lub BLIK. Dojazd do 10 km w cenie zabiegu. Powyżej 10 km do 20 km — dopłata 10 zł; powyżej 20 km — 20 zł.</p>
       </div>
     </div>
     <div class="rv" style="margin-top:32px">
@@ -1167,7 +1198,7 @@ body.is-locked { overflow: hidden; }
         <h2 class="h2">Dojeżdżam w promieniu 30 km od Ogrodzieńca</h2>
         <p class="lead">Poniżej wybrane miejscowości objęte dojazdem. Pełny wykaz znajdziesz na dole strony. Przy umawianiu wizyty potwierdzimy adres i koszt dojazdu.</p>
         <div class="pills">
-          <a href="#dojazd">Ogrodzieniec</a><a href="#dojazd">Zawiercie</a><a href="#dojazd">Łazy</a><a href="#dojazd">Niegowonice</a><a href="#dojazd">Chechło</a><a href="#dojazd">Kwaśniów</a><a href="#dojazd">Pilica</a><a href="#dojazd">Klucze</a><a href="#dojazd">Chruszczobród</a><a href="#dojazd">Rokitno Szlacheckie</a><a href="#dojazd">Grabowa</a><a href="#dojazd">Bydlin</a><a href="#dojazd">Chlina</a><a href="#dojazd">Poręba</a><a href="#dojazd">Sławniów</a><a href="#dojazd">Myszków</a><a href="#dojazd">Włodowice</a><a href="#dojazd">Kroczyce</a><a href="#dojazd">Wolbrom</a>
+          <a href="#dojazd">Ogrodzieniec</a><a href="#dojazd">Zawiercie</a><a href="#dojazd">Łazy</a><a href="#dojazd">Niegowonice</a><a href="#dojazd">Chechło</a><a href="#dojazd">Kwaśniów</a><a href="#dojazd">Pilica</a><a href="#dojazd">Klucze</a><a href="#dojazd">Chruszczobród</a><a href="#dojazd">Rokitno Szlacheckie</a><a href="#dojazd">Grabowa</a><span class="town-break" aria-hidden="true"></span><a href="#dojazd">Bydlin</a><a href="#dojazd">Chlina</a><a href="#dojazd">Poręba</a><a href="#dojazd">Sławniów</a><a href="#dojazd">Myszków</a><a href="#dojazd">Włodowice</a><a href="#dojazd">Kroczyce</a><a href="#dojazd">Wolbrom</a>
         <a href="#dojazd">Wierbka</a><a href="#dojazd">Szyce</a><a href="#dojazd">Jeżówka</a><a href="#dojazd">Kocikowa</a><a href="#dojazd">Mokrus</a></div>
         <p class="small">Dojazd do 10 km w cenie zabiegu. Powyżej 10 km do 20 km — dopłata 10 zł. Powyżej 20 km — dopłata 20 zł. Możesz też przyjechać do gabinetu — ul. Mickiewicza 8.</p>
       </div>
@@ -1208,20 +1239,35 @@ body.is-locked { overflow: hidden; }
   <div class="wrap">
     <div class="head-block rv">
       <p class="eyebrow">Galeria</p>
-      <h2 class="h2">Z mojej pracy</h2>
-      <p class="lead">Prawdziwe zdjęcia z wizyt i z gabinetu — bez zdjęć z internetu. Kliknięcie powiększa.</p>
+      <h2 class="h2">Ukończone kursy i z mojej pracy</h2>
+      <p class="lead">Kliknij wybrany kafel, aby go powiększyć.</p>
     </div>
-    <div class="gallery rv">
-      <div class="ph"><span>Terapia FITS — ćwiczenia korekcyjne z dzieckiem</span></div>
-      <div class="ph"><span>Rozłożony stół w pokoju pacjenta</span></div>
-      <div class="ph"><span>Gabinet — stanowisko do terapii</span></div>
-      <div class="ph"><span>Sprzęt: piny, masażer, narzędzia do terapii</span></div>
-      <div class="ph"><span>Terapia odcinka lędźwiowego</span></div>
-      <div class="ph"><span>Masaż karku i barków</span></div>
+    <h3 class="gallery__heading" id="kursy">Ukończone kursy</h3>
+    <p class="small">Miejsce na certyfikaty i dyplomy — dokumenty w przygotowaniu.</p>
+    <div class="gallery rv" aria-labelledby="kursy">
+<button type="button" class="gallery__tile ph" data-gallery-title="Certyfikat lub dyplom 1" aria-label="Powiększ: Certyfikat lub dyplom 1"><span>Certyfikat lub dyplom 1<small>Dokument do uzupełnienia</small></span></button>
+<button type="button" class="gallery__tile ph" data-gallery-title="Certyfikat lub dyplom 2" aria-label="Powiększ: Certyfikat lub dyplom 2"><span>Certyfikat lub dyplom 2<small>Dokument do uzupełnienia</small></span></button>
+<button type="button" class="gallery__tile ph" data-gallery-title="Certyfikat lub dyplom 3" aria-label="Powiększ: Certyfikat lub dyplom 3"><span>Certyfikat lub dyplom 3<small>Dokument do uzupełnienia</small></span></button>
+<button type="button" class="gallery__tile ph" data-gallery-title="Certyfikat lub dyplom 4" aria-label="Powiększ: Certyfikat lub dyplom 4"><span>Certyfikat lub dyplom 4<small>Dokument do uzupełnienia</small></span></button>
+<button type="button" class="gallery__tile ph" data-gallery-title="Certyfikat lub dyplom 5" aria-label="Powiększ: Certyfikat lub dyplom 5"><span>Certyfikat lub dyplom 5<small>Dokument do uzupełnienia</small></span></button>
+<button type="button" class="gallery__tile ph" data-gallery-title="Certyfikat lub dyplom 6" aria-label="Powiększ: Certyfikat lub dyplom 6"><span>Certyfikat lub dyplom 6<small>Dokument do uzupełnienia</small></span></button>
     </div>
-    <p class="small rv" style="margin-top:18px">Sześć kafli to układ startowy — galerię można rozbudować w każdej chwili, bez zmian w projekcie strony.</p>
+    <h3 class="gallery__heading" id="zdjecia-pracy">Z mojej pracy</h3>
+    <p class="small">Zdjęcia z wizyt i gabinetu — materiały w przygotowaniu.</p>
+    <div class="gallery rv" aria-labelledby="zdjecia-pracy">
+<button type="button" class="gallery__tile ph" data-gallery-title="Terapia FITS — ćwiczenia korekcyjne z dzieckiem" aria-label="Powiększ: Terapia FITS — ćwiczenia korekcyjne z dzieckiem"><span>Terapia FITS — ćwiczenia korekcyjne z dzieckiem<small>Zdjęcie do uzupełnienia</small></span></button>
+<button type="button" class="gallery__tile ph" data-gallery-title="Rozłożony stół w pokoju pacjenta" aria-label="Powiększ: Rozłożony stół w pokoju pacjenta"><span>Rozłożony stół w pokoju pacjenta<small>Zdjęcie do uzupełnienia</small></span></button>
+<button type="button" class="gallery__tile ph" data-gallery-title="Gabinet — stanowisko do terapii" aria-label="Powiększ: Gabinet — stanowisko do terapii"><span>Gabinet — stanowisko do terapii<small>Zdjęcie do uzupełnienia</small></span></button>
+<button type="button" class="gallery__tile ph" data-gallery-title="Sprzęt do fizjoterapii i masażu" aria-label="Powiększ: Sprzęt do fizjoterapii i masażu"><span>Sprzęt do fizjoterapii i masażu<small>Zdjęcie do uzupełnienia</small></span></button>
+<button type="button" class="gallery__tile ph" data-gallery-title="Terapia odcinka lędźwiowego" aria-label="Powiększ: Terapia odcinka lędźwiowego"><span>Terapia odcinka lędźwiowego<small>Zdjęcie do uzupełnienia</small></span></button>
+<button type="button" class="gallery__tile ph" data-gallery-title="Masaż karku i barków" aria-label="Powiększ: Masaż karku i barków"><span>Masaż karku i barków<small>Zdjęcie do uzupełnienia</small></span></button>
+    </div>
   </div>
 </section>
+<dialog class="lightbox" id="gallery-preview" aria-labelledby="gallery-preview-title">
+  <div class="lightbox__bar"><h2 id="gallery-preview-title"></h2><button class="btn" type="button" id="gallery-close" autofocus>Zamknij</button></div>
+  <div id="gallery-preview-content"></div>
+</dialog>
 
 <!-- ============ OPINIE ============ -->
 <section class="sec" id="opinie">
@@ -1272,7 +1318,7 @@ body.is-locked { overflow: hidden; }
   <div class="wrap">
     <div class="head-block rv"><p class="eyebrow">Cennik</p><h2 class="h2">Wizyta fizjoterapeutyczna</h2><p class="lead">Jedna cena wizyty dla dorosłych i dzieci.</p></div>
     <div class="price rv">
-      <div class="price__row"><span class="price__name">Wizyta fizjoterapeutyczna — dorośli i dzieci</span><span class="price__time">45 min</span><span class="price__val">160 zł</span></div>
+      <div class="price__row"><span class="price__name"><span>Wizyta fizjoterapeutyczna</span> <span class="price__audience">— dorośli i dzieci</span></span><span class="price__time">45 min</span><span class="price__val">160 zł</span></div>
       <p class="small" style="margin-top:20px">Dojazd do 10 km w cenie. Powyżej 10 km do 20 km — dopłata 10 zł; powyżej 20 km — dopłata 20 zł. Nie praktykuję wizyt i cen w pakietach. Odwołanie wizyty najpóźniej w dniu wizyty, 6 godzin przed terminem.</p>
     </div>
   </div>
@@ -1391,8 +1437,8 @@ body.is-locked { overflow: hidden; }
 <!-- ============ STOPKA ============ -->
 <footer class="foot">
   <svg class="brand-ribbon" viewBox="0 0 1000 360" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-        <path class="brand-ribbon__pink" d="M0 0 C225 20 410 70 500 180 C350 105 155 120 0 105 Z"/>
-        <path class="brand-ribbon__pink" d="M0 0 C225 20 410 70 500 180 C350 105 155 120 0 105 Z" transform="rotate(180 500 180)"/>
+        <path class="brand-ribbon__pink" d="M0 0 C220 20 405 75 500 180 C365 125 170 145 0 145 Z"/>
+        <path class="brand-ribbon__pink" d="M0 0 C220 20 405 75 500 180 C365 125 170 145 0 145 Z" transform="rotate(180 500 180)"/>
       </svg>
   <div class="wrap">
     <div class="foot__cols">
@@ -1411,7 +1457,7 @@ body.is-locked { overflow: hidden; }
       <div>
         <h4>Gdzie dojeżdżam</h4>
         <div class="foot__towns">
-          <a href="#dojazd">Ogrodzieniec</a><a href="#dojazd">Zawiercie</a><a href="#dojazd">Łazy</a><a href="#dojazd">Niegowonice</a><a href="#dojazd">Chechło</a><a href="#dojazd">Kwaśniów</a><a href="#dojazd">Pilica</a><a href="#dojazd">Klucze</a><a href="#dojazd">Chruszczobród</a><a href="#dojazd">Rokitno Szlacheckie</a><a href="#dojazd">Grabowa</a><a href="#dojazd">Bydlin</a><a href="#dojazd">Chlina</a><a href="#dojazd">Poręba</a><a href="#dojazd">Sławniów</a><a href="#dojazd">Myszków</a><a href="#dojazd">Włodowice</a><a href="#dojazd">Kroczyce</a><a href="#dojazd">Wolbrom</a>
+          <a href="#dojazd">Ogrodzieniec</a><a href="#dojazd">Zawiercie</a><a href="#dojazd">Łazy</a><a href="#dojazd">Niegowonice</a><a href="#dojazd">Chechło</a><a href="#dojazd">Kwaśniów</a><a href="#dojazd">Pilica</a><a href="#dojazd">Klucze</a><a href="#dojazd">Chruszczobród</a><a href="#dojazd">Rokitno Szlacheckie</a><a href="#dojazd">Grabowa</a><span class="town-break" aria-hidden="true"></span><a href="#dojazd">Bydlin</a><a href="#dojazd">Chlina</a><a href="#dojazd">Poręba</a><a href="#dojazd">Sławniów</a><a href="#dojazd">Myszków</a><a href="#dojazd">Włodowice</a><a href="#dojazd">Kroczyce</a><a href="#dojazd">Wolbrom</a>
         <a href="#dojazd">Wierbka</a><a href="#dojazd">Szyce</a><a href="#dojazd">Jeżówka</a><a href="#dojazd">Kocikowa</a><a href="#dojazd">Mokrus</a></div>
       </div>
       <div>
@@ -1459,6 +1505,41 @@ body.is-locked { overflow: hidden; }
 (function () {
   "use strict";
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+
+  /* Natywny dialog: obsługa klawiatury, Escape i powrót fokusu. */
+  var galleryDialog = document.getElementById("gallery-preview");
+  var galleryContent = document.getElementById("gallery-preview-content");
+  var galleryOpener;
+  document.querySelectorAll("[data-gallery-title]").forEach(function (tile) {
+    tile.addEventListener("click", function () {
+      galleryOpener = tile;
+      document.getElementById("gallery-preview-title").textContent = tile.dataset.galleryTitle;
+      galleryContent.replaceChildren();
+      var img = tile.querySelector("img");
+      if (img) {
+        var full = img.cloneNode();
+        full.src = tile.dataset.full || img.src;
+        galleryContent.appendChild(full);
+      } else {
+        var placeholder = document.createElement("div");
+        placeholder.className = "ph";
+        var label = document.createElement("span");
+        label.textContent = "Miejsce na materiał — do uzupełnienia";
+        placeholder.appendChild(label);
+        galleryContent.appendChild(placeholder);
+      }
+      galleryDialog.showModal();
+    });
+  });
+  document.getElementById("gallery-close").addEventListener("click", function () { galleryDialog.close(); });
+  galleryDialog.addEventListener("click", function (event) {
+    if (event.target === galleryDialog) {
+      var box = galleryDialog.getBoundingClientRect();
+      if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) galleryDialog.close();
+    }
+  });
+  galleryDialog.addEventListener("close", function () { if (galleryOpener) galleryOpener.focus(); });
 
   /* ---- rok w stopce ---- */
   var y = document.getElementById("year");
