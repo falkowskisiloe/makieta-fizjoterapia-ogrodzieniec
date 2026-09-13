@@ -803,7 +803,7 @@ body.is-locked { overflow: hidden; }
 .hours__row { flex-wrap: wrap; gap: 4px 16px; }
 
 /* Korekty klienta: portret, galeria i układ na telefonie. */
-.hero__portrait { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 25%; }
+.hero__portrait { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; }
 .town-break { flex-basis: 100%; height: 0; }
 .gallery__heading { color: var(--navy-900); font-family: var(--f-head); font-size: 24px; margin: 32px 0 10px; }
 .gallery__tile { width: 100%; cursor: zoom-in; font: inherit; }
@@ -835,11 +835,11 @@ body:has(.lightbox[open]) { overflow: hidden; }
 <div class="progress" id="progress"></div>
 
 <details class="memo" id="memo" open>
-  <summary><span>i</span>Makieta poglądowa — wersja 10 (aktualna oferta, cennik i godziny wizyt)</summary>
+  <summary><span>i</span>Makieta poglądowa — wersja 11 (portret, ukończone kursy i korekty klienta)</summary>
   <div class="memo__in">
     To nie jest gotowa strona. Teksty, kolejność sekcji, kolory i zdjęcia można jeszcze zmienić.
     <div class="memo__row">
-      <span><i class="sw sw--tbd"></i> <b>podświetlone</b> = dane do potwierdzenia (m.in. numer PWZFz i forma płatności)</span>
+      <span><i class="sw sw--tbd"></i> <b>podświetlone</b> = dane do potwierdzenia (m.in. numer PWZFz i NIP)</span>
       <span><i class="sw sw--ph"></i> <b>zakreskowane</b> = miejsce na zdjęcie</span>
     </div>
   </div>
