@@ -854,6 +854,17 @@ body:has(.lightbox[open]) { overflow: hidden; }
 .footer-extras p { margin: 10px 0 22px; color: var(--ink); }
 .footer-extras .btn { color: white; text-decoration: none; }
 @media(max-width:600px) { .footer-extras { grid-template-columns: 1fr; } .travel-map iframe { height: 320px; } .footer-extras .btn { width: 100%; } }
+/* Poradnik dla rodziców — materiały klienta. */
+.kids-guide, .kids-signs { padding: clamp(22px,3vw,36px); border: 1px solid var(--line); border-radius: 22px; background: white; color: var(--navy-900); }
+.kids-guide { border-top: 5px solid var(--pink-700); }
+.kids-guide ol { margin: 24px 0 0; padding-left: 24px; }
+.kids-guide li { display: list-item; margin-bottom: 20px; padding-left: 6px; line-height: 1.75; }
+.kids-guide li::marker { color: var(--pink-700); font-weight: 700; }
+.kids-signs { margin-top: 32px; }
+.kids-signs ul { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px 40px; padding-left: 22px; margin: 24px 0; }
+.kids-signs li, .kids-signs p { line-height: 1.75; }
+.kids-signs p { margin: 16px 0; }
+@media(max-width:650px) { .kids-signs ul { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -861,7 +872,7 @@ body:has(.lightbox[open]) { overflow: hidden; }
 <div class="progress" id="progress"></div>
 
 <details class="memo" id="memo" open>
-  <summary><span>i</span>Makieta poglądowa — wersja 15 (nowe zdjęcie główne)</summary>
+  <summary><span>i</span>Makieta poglądowa — wersja 16 (Facebook, rehabilitacja dzieci i drugi portret)</summary>
   <div class="memo__in">
     To nie jest gotowa strona. Teksty, kolejność sekcji, kolory i zdjęcia można jeszcze zmienić.
     <div class="memo__row">
@@ -962,7 +973,7 @@ body:has(.lightbox[open]) { overflow: hidden; }
         <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Terapia skolioz metodą FITS</span>
         <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Rehabilitacja metodą PNF</span>
         <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Pinoterapia przeciwbólowa</span>
-        <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Dzieci od 3–4 lat i dorośli</span>
+        <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Dzieci od 3 lat i dorośli</span>
         <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Gabinet w przygotowaniu</span>
       </div>
       <nav class="hero__services" aria-label="Główne usługi">
@@ -1108,7 +1119,7 @@ body:has(.lightbox[open]) { overflow: hidden; }
               <span class="tag">Plecy okrągłe i wklęsłe</span>
               <span class="tag">Instruktaż dla rodzica</span>
             </div>
-            <p class="small" style="font-size:16.5px;color:var(--ink)">Pracuję metodą <b>FITS</b> — Funkcjonalną Indywidualną Terapią Skolioz, w której jestem dyplomowanym terapeutą. Pracuję z dziećmi od około 3–4 lat, młodzieżą oraz młodymi dorosłymi. Wizytę prowadzę w domu, w znanym otoczeniu. Rodzic jest przy wizycie i uczy się ćwiczeń razem z dzieckiem, żeby dało się je powtarzać między spotkaniami.</p>
+            <p class="small" style="font-size:16.5px;color:var(--ink)">Pracuję metodą <b>FITS</b> — Funkcjonalną Indywidualną Terapią Skolioz, w której jestem dyplomowanym terapeutą. Pracuję z dziećmi od 3 lat, młodzieżą oraz młodymi dorosłymi. Wizytę prowadzę w domu, w znanym otoczeniu. Rodzic jest przy wizycie i uczy się ćwiczeń razem z dzieckiem, żeby dało się je powtarzać między spotkaniami.</p>
             <div class="meta-row">
               <span>Czas wizyty: 45 min</span>
               <span>Cena wizyty: <strong>160 zł</strong></span>
@@ -1166,13 +1177,13 @@ body:has(.lightbox[open]) { overflow: hidden; }
     <div class="kids">
       <div class="rv">
         <p class="eyebrow">Dzieci · młodzież · młodzi dorośli</p>
-        <h2 class="h2">Korekcja wad postawy i skolioz — u dziecka w domu</h2>
-        <p class="small age-note">Rehabilitacja dzieci od około 3–4 lat, młodzieży szkolnej i młodych dorosłych do około 25 lat. Nie prowadzę rehabilitacji niemowląt ani dzieci w wieku 0–2 lata.</p>
-        <p class="lead">Badania przesiewowe w szkole albo wizyta u ortopedy kończą się zwykle zaleceniem: „ćwiczenia korekcyjne”. Problem w tym, że trzeba je wykonywać regularnie, a dojazdy do gabinetu po lekcjach szybko się kończą. Dlatego przyjeżdżam do domu.</p>
+        <h2 class="h2">Fizjoterapia dzieci i młodzieży od 3 do 18 lat</h2>
+        <p class="small age-note">Pracuję z przedszkolakami i młodzieżą szkolną w wieku 3–18 lat. Oferta obejmuje także rehabilitację młodych dorosłych i starszych pacjentów. Nie prowadzę rehabilitacji niemowląt ani dzieci w wieku 0–2 lata.</p>
+        <p class="lead">Niepokoi Cię postawa dziecka, sposób chodzenia albo zgłaszany ból? Podczas wizyty rozmawiam z rodzicem i dzieckiem, oceniam ruch oraz dobieram ćwiczenia do wieku i możliwości pacjenta. Przyjeżdżam do domu, by łatwiej było połączyć terapię z codziennymi zajęciami.</p>
         <ul>
           <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b style="color:var(--navy-900)">Dziecko jest w znanym otoczeniu</b> — bez poczekalni i bez stresu, co pomaga przedszkolakom i uczniom spokojnie uczestniczyć w ćwiczeniach.</span></li>
           <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b style="color:var(--navy-900)">Rodzic uczy się ćwiczeń razem z dzieckiem</b> — pokazuję, na co patrzeć i jakie błędy poprawiać, żeby praca między wizytami miała sens.</span></li>
-          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b style="color:var(--navy-900)">Widzę warunki, w których dziecko żyje</b> — biurko, krzesło, plecak, łóżko. Połowa problemów z postawą siedzi właśnie tam.</span></li>
+          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b style="color:var(--navy-900)">Widzę warunki, w których dziecko żyje</b> — biurko, krzesło, plecak, łóżko. Mogę podpowiedzieć, jak dostosować codzienne otoczenie do potrzeb dziecka.</span></li>
           <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b style="color:var(--navy-900)">Terminy wizyt</b> — dojazd w soboty 8:00–14:00; gabinet jest w przygotowaniu. Proszę wcześniej zadzwonić.</span></li>
         </ul>
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
@@ -1181,8 +1192,31 @@ body:has(.lightbox[open]) { overflow: hidden; }
         </div>
       </div>
       <div class="rv">
-        <div class="ph ph--portrait"><span>Zdjęcie do uzupełnienia: ćwiczenia z dzieckiem od 3–4 lat lub młodzieżą szkolną</span></div>
+        <aside class="kids-guide" aria-labelledby="kids-prepare">
+          <p class="eyebrow">Przed wizytą domową</p>
+          <h3 class="h3" id="kids-prepare">Jak przygotować dziecko?</h3>
+          <ol>
+            <li><strong>Dokumentacja.</strong> Przygotuj dotychczasowe wyniki badań, wypisy i zalecenia dotyczące dziecka.</li>
+            <li><strong>Swobodny strój.</strong> Wybierz wygodne ubranie jak na WF, które nie ogranicza ruchu. Postaw w pobliżu wodę do picia.</li>
+            <li><strong>Twoje obserwacje.</strong> Zapisz, co Cię niepokoi i kiedy to zauważasz. Zdjęcie lub krótki film nietypowego ruchu możesz pokazać podczas wizyty.</li>
+            <li><strong>Miejsce i spokój.</strong> Przygotuj około 2 × 2 m wolnej podłogi, ręcznik i prześcieradło. Wyjaśnij dziecku, że będziemy rozmawiać i ćwiczyć. Nie musi od razu pokazać wszystkiego.</li>
+          </ol>
+        </aside>
       </div>
+    </div>
+    <div class="kids-signs" aria-labelledby="kids-signs-heading">
+      <h3 class="h3" id="kids-signs-heading">Co warto skonsultować?</h3>
+      <p>Zwróć uwagę na powtarzające się zmiany w postawie i poruszaniu się dziecka:</p>
+      <ul>
+        <li>Głowa często przechylona na bok lub wysunięta do przodu.</li>
+        <li>Barki na różnej wysokości lub wyraźnie odstające łopatki.</li>
+        <li>Nietypowe wygięcie pleców albo asymetryczne ustawienie miednicy.</li>
+        <li>Kolana kierujące się mocno do środka, płaskie stopy lub stopy zwracane do wewnątrz podczas chodu.</li>
+        <li>Zgłaszany ból pleców, kolan lub innych części ciała.</li>
+        <li>Inny sposób ruchu, który budzi Twoje wątpliwości.</li>
+      </ul>
+      <p>Takie obserwacje same w sobie nie są rozpoznaniem choroby. Warto omówić je podczas konsultacji, aby ustalić, czy dziecko potrzebuje terapii lub dalszej oceny.</p>
+      <a class="btn" href="tel:+48691807853">Umów konsultację dziecka</a>
     </div>
   </div>
 </section>
@@ -1251,7 +1285,7 @@ body:has(.lightbox[open]) { overflow: hidden; }
   <div class="wrap">
     <div class="about">
       <div class="rv">
-        <img class="about-portrait" src="assets/marzena-o-mnie.webp" alt="Marzena Tarczyńska" loading="lazy" width="508" height="816" decoding="async">
+        <img class="about-portrait" src="assets/marzena-o-mnie-kolor.webp" alt="Marzena Tarczyńska" loading="lazy" width="508" height="816" decoding="async">
         <p class="about__cap">Marzena Tarczyńska · Ogrodzieniec</p>
       </div>
       <div class="rv">
@@ -1488,7 +1522,7 @@ body:has(.lightbox[open]) { overflow: hidden; }
           <a href="tel:+48691807853">691 807 853</a>
           <a href="mailto:marzenaojzanowska@gmail.com">marzenaojzanowska@gmail.com</a>
           <a href="https://wa.me/48691807853" target="_blank" rel="noopener">WhatsApp</a>
-          <a href="https://www.facebook.com/FizjoMarzena/" target="_blank" rel="noopener">Facebook — FizjoMarzena</a>
+          <a href="https://www.facebook.com/share/1D8XsV7Ac4/" target="_blank" rel="noopener">Facebook — Marzena Tarczyńska</a>
           <span>Wizyty domowe: sobota 8:00–14:00</span><span>Gabinet w przygotowaniu — termin otwarcia podamy na stronie</span><span>Wizyty proszę umawiać na telefon.</span>
         </div>
       </div>
@@ -1512,7 +1546,7 @@ body:has(.lightbox[open]) { overflow: hidden; }
       </div>
     </div>
     <section class="footer-extras" aria-label="Facebook i pogoda">
-      <div><h3>FizjoMarzena na Facebooku</h3><p>Odwiedź profil i zobacz aktualności.</p><a class="btn" href="https://www.facebook.com/FizjoMarzena/" target="_blank" rel="noopener noreferrer">Odwiedź Facebook</a></div>
+      <div><h3>Marzena na Facebooku</h3><p>Odwiedź profil Marzeny Tarczyńskiej.</p><a class="btn" href="https://www.facebook.com/share/1D8XsV7Ac4/" target="_blank" rel="noopener noreferrer">Odwiedź Facebook</a></div>
       <div><h3>Pogoda w Ogrodzieńcu</h3><p>Sprawdź aktualną prognozę na dziś i kolejne dni.</p><a class="btn" href="https://pogoda.interia.pl/prognoza-szczegolowa-ogrodzieniec,cId,23890" target="_blank" rel="noopener noreferrer">Sprawdź pogodę</a></div>
     </section>
     <div class="coverage" id="miejscowosci">
