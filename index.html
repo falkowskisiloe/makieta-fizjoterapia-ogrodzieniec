@@ -328,7 +328,7 @@ body.is-locked { overflow: hidden; }
   padding: 8px 14px; border-radius: 100px;
 }
 .chip svg { color: var(--blue-300); flex: none; }
-.hero__media { position: relative; overflow: hidden; border-radius: var(--r-m); }
+.hero__media { width: 100%; max-width: 508px; justify-self: center; position: relative; overflow: hidden; border-radius: var(--r-m); }
 .hero__media .ph { border-color: #3E7099; background: repeating-linear-gradient(135deg, #1A4767 0 12px, #1E5077 12px 24px); }
 .hero__media .ph span { background: rgba(9,26,41,.86); color: var(--blue-100); }
 
@@ -803,7 +803,7 @@ body.is-locked { overflow: hidden; }
 .hours__row { flex-wrap: wrap; gap: 4px 16px; }
 
 /* Korekty klienta: portret, galeria i układ na telefonie. */
-.hero__portrait { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; }
+.hero__portrait { display: block; width: 100%; height: auto; aspect-ratio: 508 / 823; object-fit: contain; }
 .town-break { flex-basis: 100%; height: 0; }
 .gallery__heading { color: var(--navy-900); font-family: var(--f-head); font-size: 24px; margin: 32px 0 10px; }
 .gallery__tile { width: 100%; cursor: zoom-in; font: inherit; }
@@ -815,7 +815,7 @@ body.is-locked { overflow: hidden; }
 .lightbox__bar { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 20px; }
 .lightbox__bar h2 { font-size: 20px; }
 .lightbox__bar .btn { padding: 12px 20px; }
-.lightbox img { display: block; max-width: 100%; max-height: 70dvh; object-fit: contain; margin: auto; }
+.lightbox img { display: block; width: auto; height: auto; max-width: 100%; max-height: 70dvh; object-fit: contain; margin: auto; }
 .lightbox .ph { min-height: 300px; aspect-ratio: 4 / 3; }
 body:has(.lightbox[open]) { overflow: hidden; }
 @media (max-width: 559px) {
@@ -830,16 +830,16 @@ body:has(.lightbox[open]) { overflow: hidden; }
 
 
 .foot__signature { color: var(--pink-700); font-weight: 600; }
-.section-photo { display: block; width: 100%; aspect-ratio: 3/2; object-fit: cover; border-radius: var(--r-m); }
-.about-portrait { display: block; width: 100%; max-height: 650px; object-fit: cover; object-position: top; border-radius: var(--r-m); }
+.section-photo { display: block; width: 100%; height: auto; aspect-ratio: 3/2; object-fit: contain; background: #edf5f9; border-radius: var(--r-m); }
+.about-portrait { display: block; width: 100%; max-width: 420px; height: auto; margin-inline: auto; object-fit: contain; border-radius: var(--r-m); }
 .gallery__photo { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; padding: 0; background: white; color: var(--navy-900); text-align: left; }
-.gallery__photo img { display: block; width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.gallery__photo img { display: block; width: 100%; height: auto; aspect-ratio: 3/2; object-fit: contain; background: #edf5f9; }
 .gallery__photo span { display: block; padding: 14px; font-weight: 600; font-size: 15px; }
 .space-guide { padding: 28px; border: 1px solid var(--blue-300); border-left: 5px solid var(--pink-400); border-radius: 18px; background: var(--blue-50); }
 .space-guide b { font-size: 23px; color: var(--navy-900); }
 .space-guide p { margin: 10px 0 0; }
 .equipment { display:grid; gap:24px; align-items:center; }
-.equipment img { width:100%; display:block; border-radius:20px; }
+.equipment img { width:100%; height:auto; display:block; border-radius:20px; }
 @media(min-width:800px) { .equipment { grid-template-columns:1.3fr 1fr; } }
 
 </style>
@@ -962,7 +962,7 @@ body:has(.lightbox[open]) { overflow: hidden; }
       <p class="hero__towns">Zawiercie · Łazy · Niegowonice · Chechło · Kwaśniów · Pilica i okolice — <a href="#dojazd">sprawdź, czy dojeżdżam do Ciebie</a></p>
     </div>
     <div class="hero__media">
-      <img class="hero__portrait" src="assets/marzena-tarczynska.jpg" alt="Marzena Tarczyńska, fizjoterapeutka FizjoMarzena" width="508" height="823" fetchpriority="high">
+      <img class="hero__portrait" src="assets/marzena-tarczynska.webp" alt="Marzena Tarczyńska, fizjoterapeutka FizjoMarzena" fetchpriority="high" width="508" height="823" decoding="async">
       <svg class="brand-ribbon" viewBox="0 0 1000 360" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
         <path class="brand-ribbon__pink" d="M0 0 C220 20 405 75 500 180 C350 65 175 90 0 145 Z"/>
         <path class="brand-ribbon__pink" d="M0 0 C220 20 405 75 500 180 C350 65 175 90 0 145 Z" transform="rotate(180 500 180)"/>
@@ -990,7 +990,7 @@ body:has(.lightbox[open]) { overflow: hidden; }
 
 <section class="sec" id="sprzet">
   <div class="wrap equipment rv">
-    <figure style="margin:0"><img src="assets/stol-mobilny.jpg" alt="Niebieski stół do fizjoterapii i osoba z pokrowcem transportowym — kompozycja ilustracyjna" width="1536" height="1024" loading="lazy"><figcaption class="small" style="margin-top:10px">Ilustracja sprzętu do wizyt domowych.</figcaption></figure>
+    <figure style="margin:0"><img src="assets/stol-mobilny.webp" alt="Niebieski stół do fizjoterapii i osoba z pokrowcem transportowym — kompozycja ilustracyjna" loading="lazy" width="1280" height="853" decoding="async"><figcaption class="small" style="margin-top:10px">Ilustracja sprzętu do wizyt domowych.</figcaption></figure>
     <div><p class="eyebrow">Własny sprzęt · Twój dom</p><h2 class="h2">Przyjeżdżam przygotowana</h2><p class="lead">Przywożę składany stół, narzędzia i urządzenia do fizjoterapii i masażu. Ty przygotowujesz około 2 × 2 m wolnej podłogi oraz ręcznik i prześcieradło.</p><a class="btn" href="#wizyta">Jak wygląda wizyta?</a></div>
   </div>
 </section>
@@ -1063,7 +1063,7 @@ body:has(.lightbox[open]) { overflow: hidden; }
 
       <div class="panel is-active" role="tabpanel" id="p1" aria-labelledby="t1">
         <div class="panel__grid">
-          <img class="section-photo" src="assets/terapia-2.jpg" alt="Terapia pleców — zdjęcie ilustracyjne" loading="lazy">
+          <img class="section-photo" src="assets/terapia-2.webp" alt="Terapia pleców — zdjęcie ilustracyjne" loading="lazy" width="1280" height="883" decoding="async">
           <div>
             <h3 class="h3">Rehabilitacja ortopedyczna i terapia bólów kręgosłupa</h3>
             <div class="tags">
@@ -1108,7 +1108,7 @@ body:has(.lightbox[open]) { overflow: hidden; }
 
       <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
         <div class="panel__grid">
-          <img class="section-photo" src="assets/terapia-3.jpg" alt="Masaż karku — zdjęcie ilustracyjne" loading="lazy">
+          <img class="section-photo" src="assets/terapia-3.webp" alt="Masaż karku — zdjęcie ilustracyjne" loading="lazy" width="897" height="473" decoding="async">
           <div>
             <h3 class="h3">Masaż leczniczy i Taping</h3>
             <div class="tags">
@@ -1131,7 +1131,7 @@ body:has(.lightbox[open]) { overflow: hidden; }
 
       <div class="panel" role="tabpanel" id="p4" aria-labelledby="t4" hidden>
         <div class="panel__grid">
-          <img class="section-photo" src="assets/terapia-5.jpg" alt="Terapia kończyny dolnej — zdjęcie ilustracyjne" loading="lazy">
+          <img class="section-photo" src="assets/terapia-5.webp" alt="Terapia kończyny dolnej — zdjęcie ilustracyjne" loading="lazy" width="850" height="426" decoding="async">
           <div>
             <h3 class="h3">Rehabilitacja medyczna</h3>
             <div class="tags"><span class="tag">Rehabilitacja metodą PNF</span><span class="tag">Pinoterapia przeciwbólowa</span><span class="tag">Ćwiczenia indywidualne</span></div>
@@ -1235,7 +1235,7 @@ body:has(.lightbox[open]) { overflow: hidden; }
   <div class="wrap">
     <div class="about">
       <div class="rv">
-        <img class="about-portrait" src="assets/marzena-tarczynska.jpg" alt="Marzena Tarczyńska" loading="lazy">
+        <img class="about-portrait" src="assets/marzena-tarczynska.webp" alt="Marzena Tarczyńska" loading="lazy" width="508" height="823" decoding="async">
         <p class="about__cap">Marzena Tarczyńska · Ogrodzieniec</p>
       </div>
       <div class="rv">
@@ -1277,12 +1277,12 @@ body:has(.lightbox[open]) { overflow: hidden; }
     <h3 class="gallery__heading" id="zdjecia-pracy">Z mojej pracy</h3>
     <p class="small">Tymczasowe zdjęcia ilustracyjne z materiałów przekazanych do makiety. Docelowo pojawią się tu zdjęcia z pracy Marzeny.</p>
     <div class="gallery rv" aria-labelledby="zdjecia-pracy">
-<button type="button" class="gallery__tile gallery__photo" data-gallery-title="Masaż pleców — zdjęcie ilustracyjne" aria-label="Powiększ: Masaż pleców"><img src="assets/terapia-1.jpg" alt="Masaż pleców — zdjęcie ilustracyjne" loading="lazy"><span>Masaż pleców</span></button>
-<button type="button" class="gallery__tile gallery__photo" data-gallery-title="Terapia dolnego odcinka pleców — zdjęcie ilustracyjne" aria-label="Powiększ: Terapia dolnego odcinka pleców"><img src="assets/terapia-2.jpg" alt="Terapia dolnego odcinka pleców — zdjęcie ilustracyjne" loading="lazy"><span>Terapia dolnego odcinka pleców</span></button>
-<button type="button" class="gallery__tile gallery__photo" data-gallery-title="Masaż karku i barków — zdjęcie ilustracyjne" aria-label="Powiększ: Masaż karku i barków"><img src="assets/terapia-3.jpg" alt="Masaż karku i barków — zdjęcie ilustracyjne" loading="lazy"><span>Masaż karku i barków</span></button>
-<button type="button" class="gallery__tile gallery__photo" data-gallery-title="Praca z napięciem mięśniowym — zdjęcie ilustracyjne" aria-label="Powiększ: Praca z napięciem mięśniowym"><img src="assets/terapia-4.jpg" alt="Praca z napięciem mięśniowym — zdjęcie ilustracyjne" loading="lazy"><span>Praca z napięciem mięśniowym</span></button>
-<button type="button" class="gallery__tile gallery__photo" data-gallery-title="Terapia kończyny dolnej — zdjęcie ilustracyjne" aria-label="Powiększ: Terapia kończyny dolnej"><img src="assets/terapia-5.jpg" alt="Terapia kończyny dolnej — zdjęcie ilustracyjne" loading="lazy"><span>Terapia kończyny dolnej</span></button>
-<button type="button" class="gallery__tile gallery__photo" data-gallery-title="Masaż leczniczy — zdjęcie ilustracyjne" aria-label="Powiększ: Masaż leczniczy"><img src="assets/terapia-6.jpg" alt="Masaż leczniczy — zdjęcie ilustracyjne" loading="lazy"><span>Masaż leczniczy</span></button>
+<button type="button" class="gallery__tile gallery__photo" data-gallery-title="Masaż pleców — zdjęcie ilustracyjne" aria-label="Powiększ: Masaż pleców"><img src="assets/terapia-1.webp" alt="Masaż pleców — zdjęcie ilustracyjne" loading="lazy" width="700" height="420" decoding="async"><span>Masaż pleców</span></button>
+<button type="button" class="gallery__tile gallery__photo" data-gallery-title="Terapia dolnego odcinka pleców — zdjęcie ilustracyjne" aria-label="Powiększ: Terapia dolnego odcinka pleców"><img src="assets/terapia-2.webp" alt="Terapia dolnego odcinka pleców — zdjęcie ilustracyjne" loading="lazy" width="1280" height="883" decoding="async"><span>Terapia dolnego odcinka pleców</span></button>
+<button type="button" class="gallery__tile gallery__photo" data-gallery-title="Masaż karku i barków — zdjęcie ilustracyjne" aria-label="Powiększ: Masaż karku i barków"><img src="assets/terapia-3.webp" alt="Masaż karku i barków — zdjęcie ilustracyjne" loading="lazy" width="897" height="473" decoding="async"><span>Masaż karku i barków</span></button>
+<button type="button" class="gallery__tile gallery__photo" data-gallery-title="Praca z napięciem mięśniowym — zdjęcie ilustracyjne" aria-label="Powiększ: Praca z napięciem mięśniowym"><img src="assets/terapia-4.webp" alt="Praca z napięciem mięśniowym — zdjęcie ilustracyjne" loading="lazy" width="1000" height="778" decoding="async"><span>Praca z napięciem mięśniowym</span></button>
+<button type="button" class="gallery__tile gallery__photo" data-gallery-title="Terapia kończyny dolnej — zdjęcie ilustracyjne" aria-label="Powiększ: Terapia kończyny dolnej"><img src="assets/terapia-5.webp" alt="Terapia kończyny dolnej — zdjęcie ilustracyjne" loading="lazy" width="850" height="426" decoding="async"><span>Terapia kończyny dolnej</span></button>
+<button type="button" class="gallery__tile gallery__photo" data-gallery-title="Masaż leczniczy — zdjęcie ilustracyjne" aria-label="Powiększ: Masaż leczniczy"><img src="assets/terapia-6.webp" alt="Masaż leczniczy — zdjęcie ilustracyjne" loading="lazy" width="800" height="533" decoding="async"><span>Masaż leczniczy</span></button>
     </div>
   </div>
 </section>
@@ -1541,6 +1541,7 @@ body:has(.lightbox[open]) { overflow: hidden; }
       var img = tile.querySelector("img");
       if (img) {
         var full = img.cloneNode();
+        full.loading = "eager";
         full.src = tile.dataset.full || img.src;
         galleryContent.appendChild(full);
       } else {
